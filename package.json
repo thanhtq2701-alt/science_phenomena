@@ -1,0 +1,21 @@
+{
+  "name": "science-phenomenons",
+  "version": "2.0.0",
+  "description": "Mô phỏng Hóa học – Vật lí – Sinh học lớp 12: phản ứng, thí nghiệm, mô hình sinh động trên trình duyệt.",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test tests/",
+    "catalog": "node tools/build-catalog.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Tran Quoc Thanh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

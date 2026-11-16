@@ -1,10 +1,13 @@
-# Python
+# Node
+node_modules/
+npm-debug.log*
+var/
+
+# Python (legacy streamlit app in old/)
 .venv/
 venv/
 __pycache__/
 *.pyc
-
-# Streamlit secrets
 .streamlit/secrets.toml
 
 # Env & IDE

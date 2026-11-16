@@ -1,0 +1,1346 @@
+{
+  "generatedAt": "2026-11-16T15:18:16.566Z",
+  "count": 48,
+  "subjects": [
+    {
+      "id": "chem",
+      "name": "Hóa học 12",
+      "icon": "⚗️",
+      "color": "#f97316",
+      "chapters": [
+        {
+          "id": "ester-lipid",
+          "title": "Ester – Lipid",
+          "order": 1,
+          "sims": [
+            {
+              "id": "chem-esterification",
+              "title": "Phản ứng ester hóa (điều chế ethyl acetate)",
+              "summary": "Acid acetic + ethanol tạo ester có mùi thơm, phản ứng thuận nghịch, xúc tác H2SO4 đặc và đun nóng. Quan sát hiệu suất đạt cân bằng và cách đẩy cân bằng.",
+              "equation": [
+                "CH3COOH + C2H5OH ⇌ CH3COOC2H5 + H2O  (H2SO4 đặc, t°)"
+              ],
+              "keywords": [
+                "ester",
+                "ethyl acetate",
+                "cân bằng",
+                "xúc tác"
+              ],
+              "path": "chem/esterification.js",
+              "params": [
+                "temp",
+                "ratio",
+                "catalyst"
+              ]
+            },
+            {
+              "id": "chem-ester-hydrolysis",
+              "title": "Thủy phân ester: môi trường acid vs. xà phòng hóa",
+              "summary": "So sánh hai ống nghiệm chứa ethyl acetate đun với H2SO4 loãng (thuận nghịch, còn lớp ester) và với NaOH (một chiều, lớp ester biến mất).",
+              "equation": [
+                "CH3COOC2H5 + H2O ⇌ CH3COOH + C2H5OH  (H+, t°)",
+                "CH3COOC2H5 + NaOH → CH3COONa + C2H5OH  (t°)",
+                "Chất béo: (RCOO)3C3H5 + 3NaOH → 3RCOONa + C3H5(OH)3  (xà phòng + glycerol)"
+              ],
+              "keywords": [
+                "xà phòng hóa",
+                "thủy phân",
+                "ester",
+                "chất béo",
+                "NaOH"
+              ],
+              "path": "chem/ester-hydrolysis.js",
+              "params": [
+                "temp",
+                "sub"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "carbohydrate",
+          "title": "Carbohydrate",
+          "order": 2,
+          "sims": [
+            {
+              "id": "chem-glucose-tests",
+              "title": "Nhận biết glucose: Cu(OH)2 và phản ứng tráng bạc",
+              "summary": "Ba thí nghiệm kinh điển: glucose hòa tan Cu(OH)2 thành dung dịch xanh lam (poly-alcohol), đun nóng tạo kết tủa đỏ gạch Cu2O, và tráng gương bạc với AgNO3/NH3 (nhóm –CHO).",
+              "equation": [
+                "2C6H12O6 + Cu(OH)2 → (C6H11O6)2Cu + 2H2O   (xanh lam, nhiệt độ thường)",
+                "C5H11O5–CHO + 2Cu(OH)2 + NaOH → C5H11O5–COONa + Cu2O↓ (đỏ gạch) + 3H2O  (t°)",
+                "C5H11O5–CHO + 2[Ag(NH3)2]OH → C5H11O5–COONH4 + 2Ag↓ + 3NH3 + H2O  (t°)"
+              ],
+              "keywords": [
+                "tráng bạc",
+                "tráng gương",
+                "Cu2O",
+                "đỏ gạch",
+                "glucose",
+                "aldehyde"
+              ],
+              "path": "chem/glucose-tests.js",
+              "params": [
+                "test",
+                "sugar",
+                "temp",
+                "mol"
+              ]
+            },
+            {
+              "id": "chem-starch-iodine",
+              "title": "Hồ tinh bột + iodine: màu xanh tím và nhiệt độ",
+              "summary": "Phân tử iodine chui vào lòng xoắn amylose tạo hợp chất màu xanh tím. Đun nóng xoắn duỗi ra, màu mất; để nguội màu trở lại.",
+              "equation": [
+                "(C6H10O5)n (amylose xoắn) + I2 → phức bọc I2 màu xanh tím",
+                "Đun nóng ⇄ để nguội: mất màu ⇄ có màu lại"
+              ],
+              "keywords": [
+                "tinh bột",
+                "iodine",
+                "xanh tím",
+                "amylose",
+                "nhận biết"
+              ],
+              "path": "chem/starch-iodine.js",
+              "params": [
+                "temp",
+                "iodine"
+              ]
+            },
+            {
+              "id": "chem-carb-hydrolysis",
+              "title": "Thủy phân saccharose và tinh bột",
+              "summary": "Xem chuỗi polysaccharide bị cắt thành monosaccharide dưới tác dụng của acid hoặc enzyme, rồi kiểm chứng bằng phản ứng tráng bạc.",
+              "equation": [
+                "C12H22O11 + H2O → C6H12O6 (glucose) + C6H12O6 (fructose)   (H+, t° hoặc enzyme)",
+                "(C6H10O5)n + nH2O → nC6H12O6   (H+, t° hoặc amylase)"
+              ],
+              "keywords": [
+                "thủy phân",
+                "saccharose",
+                "tinh bột",
+                "enzyme",
+                "amylase",
+                "glucose"
+              ],
+              "path": "chem/carb-hydrolysis.js",
+              "params": [
+                "sub",
+                "cat",
+                "temp"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nitrogen",
+          "title": "Hợp chất chứa nitrogen",
+          "order": 3,
+          "sims": [
+            {
+              "id": "chem-amine-reactions",
+              "title": "Amine: tính base và phản ứng của aniline với nước bromine",
+              "summary": "Methylamine làm xanh quỳ tím và tạo khói trắng với HCl; aniline không đổi màu quỳ nhưng tạo kết tủa trắng 2,4,6-tribromoaniline với nước bromine.",
+              "equation": [
+                "CH3NH2 + H2O ⇌ CH3NH3+ + OH−  (quỳ tím hóa xanh)",
+                "CH3NH2 + HCl → CH3NH3Cl  (khói trắng)",
+                "C6H5NH2 + 3Br2 → C6H2Br3NH2↓ (trắng) + 3HBr"
+              ],
+              "keywords": [
+                "amine",
+                "aniline",
+                "methylamine",
+                "bromine",
+                "kết tủa trắng",
+                "quỳ tím",
+                "base"
+              ],
+              "path": "chem/amine-reactions.js",
+              "params": [
+                "amine",
+                "test",
+                "drops"
+              ]
+            },
+            {
+              "id": "chem-amino-acid",
+              "title": "Amino acid lưỡng tính, điện di và phản ứng màu biuret của peptide",
+              "summary": "Thay đổi pH để thấy glycine chuyển giữa dạng cation – ion lưỡng cực – anion và di chuyển trong điện trường; peptide từ 2 liên kết peptide trở lên cho màu tím với Cu(OH)2.",
+              "equation": [
+                "H3N+–CH2–COOH ⇌ H3N+–CH2–COO− ⇌ H2N–CH2–COO−  (pH tăng)",
+                "H2N–CH2–COOH + HCl → ClH3N–CH2–COOH",
+                "H2N–CH2–COOH + NaOH → H2N–CH2–COONa + H2O",
+                "Peptide (≥ 2 liên kết peptide) + Cu(OH)2 → phức màu tím (biuret)"
+              ],
+              "keywords": [
+                "amino acid",
+                "glycine",
+                "lưỡng tính",
+                "điện di",
+                "peptide",
+                "biuret",
+                "pH đẳng điện"
+              ],
+              "path": "chem/amino-acid.js",
+              "params": [
+                "ph",
+                "n",
+                "field"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "polymer",
+          "title": "Polymer",
+          "order": 4,
+          "sims": [
+            {
+              "id": "chem-polymerization",
+              "title": "Trùng hợp và trùng ngưng",
+              "summary": "Nhìn các monomer nối lại: trùng hợp ethylene (mở liên kết đôi, không tách phân tử nhỏ) và trùng ngưng tạo nylon-6,6 (mỗi liên kết giải phóng một H2O).",
+              "equation": [
+                "nCH2=CH2 → (–CH2–CH2–)n   (polyethylene, PE; t°, p, xúc tác)",
+                "nH2N–(CH2)6–NH2 + nHOOC–(CH2)4–COOH → (–NH–(CH2)6–NH–CO–(CH2)4–CO–)n + 2nH2O  (nylon-6,6)"
+              ],
+              "keywords": [
+                "polymer",
+                "trùng hợp",
+                "trùng ngưng",
+                "PE",
+                "nylon",
+                "monomer",
+                "hệ số polymer hóa"
+              ],
+              "path": "chem/polymerization.js",
+              "params": [
+                "mode",
+                "rate",
+                "count"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "electrochem",
+          "title": "Pin điện và điện phân",
+          "order": 5,
+          "sims": [
+            {
+              "id": "chem-galvanic-cell",
+              "title": "Pin Galvani (pin điện hóa) Zn–Cu",
+              "summary": "Electron chạy từ cực âm (Zn tan) qua dây dẫn sang cực dương (Cu2+ bám), ion qua cầu muối khép mạch. Đổi cặp kim loại để tính sức điện động chuẩn.",
+              "equation": [
+                "Anode (−): Zn → Zn2+ + 2e",
+                "Cathode (+): Cu2+ + 2e → Cu",
+                "Tổng: Zn + Cu2+ → Zn2+ + Cu",
+                "E°pin = E°(cathode) − E°(anode) = 0,34 − (−0,76) = 1,10 V"
+              ],
+              "keywords": [
+                "pin điện hóa",
+                "galvani",
+                "sức điện động",
+                "thế điện cực chuẩn",
+                "cầu muối",
+                "anode",
+                "cathode"
+              ],
+              "path": "chem/galvanic-cell.js",
+              "params": [
+                "A",
+                "B",
+                "bridge",
+                "load"
+              ]
+            },
+            {
+              "id": "chem-electrolysis",
+              "title": "Điện phân dung dịch và mạ điện",
+              "summary": "Dòng điện một chiều ép phản ứng xảy ra: Cu bám cathode, khí thoát ra ở anode, hoặc mạ kim loại. Tính khối lượng sản phẩm bằng định luật Faraday.",
+              "equation": [
+                "m = (A · I · t) / (n · F)   với F = 96 485 C/mol",
+                "CuSO4: cathode Cu2+ + 2e → Cu; anode 2H2O → O2 + 4H+ + 4e",
+                "NaCl (màng ngăn): cathode 2H2O + 2e → H2 + 2OH−; anode 2Cl− → Cl2 + 2e"
+              ],
+              "keywords": [
+                "điện phân",
+                "Faraday",
+                "mạ điện",
+                "cathode",
+                "anode",
+                "CuSO4",
+                "NaCl"
+              ],
+              "path": "chem/electrolysis.js",
+              "params": [
+                "mode",
+                "I",
+                "scale"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "metals",
+          "title": "Đại cương về kim loại",
+          "order": 6,
+          "sims": [
+            {
+              "id": "chem-activity-series",
+              "title": "Dãy điện hóa: kim loại đẩy kim loại khỏi muối",
+              "summary": "Nhúng thanh kim loại vào dung dịch muối/acid: kim loại mạnh hơn tan ra, kim loại yếu hơn bám lên thanh. Quy tắc α và dãy điện hóa.",
+              "equation": [
+                "Fe + CuSO4 → FeSO4 + Cu   (Cu đỏ bám lên Fe, dd xanh nhạt dần)",
+                "Cu + 2AgNO3 → Cu(NO3)2 + 2Ag   (Ag bám, dd chuyển xanh)",
+                "Cu + FeSO4 → không phản ứng",
+                "Zn + 2HCl → ZnCl2 + H2↑"
+              ],
+              "keywords": [
+                "dãy điện hóa",
+                "quy tắc alpha",
+                "tính khử",
+                "thế điện cực",
+                "kim loại đẩy muối"
+              ],
+              "path": "chem/activity-series.js",
+              "params": [
+                "metal",
+                "sol"
+              ]
+            },
+            {
+              "id": "chem-corrosion",
+              "title": "Ăn mòn điện hóa và bảo vệ kim loại",
+              "summary": "Cặp Fe–Cu trong dung dịch muối tạo pin điện hóa nhỏ làm sắt gỉ nhanh; gắn Zn (anode hi sinh) thì Zn bị ăn mòn thay cho sắt.",
+              "equation": [
+                "Anode (Fe): Fe → Fe2+ + 2e",
+                "Cathode (Cu): O2 + 2H2O + 4e → 4OH−",
+                "4Fe(OH)2 + O2 + 2H2O → 4Fe(OH)3 → gỉ sắt Fe2O3·nH2O",
+                "Bảo vệ: Zn → Zn2+ + 2e (Zn hi sinh, Fe là cathode được bảo vệ)"
+              ],
+              "keywords": [
+                "ăn mòn điện hóa",
+                "gỉ sắt",
+                "anode hi sinh",
+                "bảo vệ kim loại",
+                "Fe-Cu",
+                "Zn"
+              ],
+              "path": "chem/corrosion.js",
+              "params": [
+                "pair",
+                "salt",
+                "o2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "group-ia-iia",
+          "title": "Nguyên tố nhóm IA, IIA",
+          "order": 7,
+          "sims": [
+            {
+              "id": "chem-na-water",
+              "title": "Kim loại kiềm tác dụng với nước",
+              "summary": "Mẩu Na chạy trên mặt nước, nóng chảy thành giọt tròn, sủi bọt H2, dung dịch có phenolphthalein hóa hồng; K mạnh hơn, bốc cháy ngọn lửa tím.",
+              "equation": [
+                "2Na + 2H2O → 2NaOH + H2↑",
+                "2K + 2H2O → 2KOH + H2↑ (bốc cháy)",
+                "Phenolphthalein + OH− → màu hồng"
+              ],
+              "keywords": [
+                "kim loại kiềm",
+                "natri",
+                "sodium",
+                "kali",
+                "nước",
+                "phenolphthalein",
+                "hydrogen"
+              ],
+              "path": "chem/na-water.js",
+              "params": [
+                "metal",
+                "size",
+                "pp"
+              ]
+            },
+            {
+              "id": "chem-hard-water",
+              "title": "Nước cứng và cách làm mềm",
+              "summary": "Nước chứa nhiều Ca2+, Mg2+ là nước cứng. Đun sôi chỉ loại được tính cứng tạm thời; Na2CO3 hoặc trao đổi ion loại được cả tính cứng vĩnh cửu.",
+              "equation": [
+                "Ca(HCO3)2 →(t°) CaCO3↓ + CO2↑ + H2O   (cứng tạm thời)",
+                "Ca2+ + CO3 2− → CaCO3↓ ;  Mg2+ + CO3 2− → MgCO3↓   (Na2CO3 làm mềm)",
+                "2RCOONa (xà phòng) + Ca2+ → (RCOO)2Ca↓ + 2Na+   (xà phòng mất tác dụng)"
+              ],
+              "keywords": [
+                "nước cứng",
+                "làm mềm",
+                "Ca2+",
+                "Mg2+",
+                "HCO3-",
+                "Na2CO3",
+                "trao đổi ion",
+                "cặn"
+              ],
+              "path": "chem/hard-water.js",
+              "params": [
+                "type",
+                "method",
+                "soap"
+              ]
+            },
+            {
+              "id": "chem-flame-test",
+              "title": "Màu ngọn lửa của kim loại nhóm IA, IIA",
+              "summary": "Đưa muối kim loại vào ngọn lửa: electron bị kích thích lên mức cao rồi rơi xuống phát ra photon có màu đặc trưng. Ứng dụng trong pháo hoa và nhận biết ion.",
+              "equation": [
+                "Nhiệt → e⁻ (mức thấp) → e⁻ (mức cao)  →  e⁻ rơi xuống + phát photon (λ đặc trưng)",
+                "E_photon = hc/λ  ;  Na: λ = 589 nm (vàng)"
+              ],
+              "keywords": [
+                "màu ngọn lửa",
+                "thử màu lửa",
+                "pháo hoa",
+                "kim loại kiềm",
+                "kiềm thổ",
+                "quang phổ"
+              ],
+              "path": "chem/flame-test.js",
+              "params": [
+                "el"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "transition",
+          "title": "Kim loại chuyển tiếp & phức chất",
+          "order": 8,
+          "sims": [
+            {
+              "id": "chem-complex-ions",
+              "title": "Phức chất và màu sắc của ion kim loại chuyển tiếp",
+              "summary": "Nhỏ dần thuốc thử vào dung dịch ion kim loại chuyển tiếp: kết tủa hydroxide, phức chất tan với NH3, màu đỏ máu Fe3+–SCN. Xem cấu trúc phức tứ diện/bát diện.",
+              "equation": [
+                "Cu2+ + 2NH3 + 2H2O → Cu(OH)2↓ ; Cu(OH)2 + 4NH3 → [Cu(NH3)4]2+ (xanh lam đậm)",
+                "Fe3+ + SCN− → [Fe(SCN)]2+ (đỏ máu)",
+                "Fe2+ + 2OH− → Fe(OH)2 (trắng xanh) →(O2) Fe(OH)3 (nâu đỏ)"
+              ],
+              "keywords": [
+                "phức chất",
+                "phối tử",
+                "kim loại chuyển tiếp",
+                "Cu(NH3)4",
+                "Fe(SCN)",
+                "hydroxide",
+                "màu dung dịch"
+              ],
+              "path": "chem/complex-ions.js",
+              "params": [
+                "exp",
+                "drops"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "physics",
+      "name": "Vật lí 12",
+      "icon": "🧲",
+      "color": "#38bdf8",
+      "chapters": [
+        {
+          "id": "thermal",
+          "title": "Vật lí nhiệt",
+          "order": 1,
+          "sims": [
+            {
+              "id": "physics-kinetic-model",
+              "title": "Mô hình động học phân tử: rắn – lỏng – khí",
+              "summary": "Phân tử chất rắn dao động quanh vị trí cân bằng, chất lỏng trượt lên nhau, chất khí chuyển động hỗn loạn. Tăng nhiệt độ để thấy dao động mạnh hơn và chuyển thể.",
+              "equation": [
+                "Động năng trung bình phân tử: W̄đ = (3/2)·k·T",
+                "Lực tương tác: rất mạnh (rắn) → yếu hơn (lỏng) → không đáng kể (khí)"
+              ],
+              "keywords": [
+                "cấu trúc chất",
+                "thuyết động học phân tử",
+                "rắn lỏng khí",
+                "chuyển thể",
+                "nhiệt độ"
+              ],
+              "path": "physics/kinetic-model.js",
+              "params": [
+                "temp",
+                "state"
+              ]
+            },
+            {
+              "id": "physics-brownian",
+              "title": "Chuyển động Brown",
+              "summary": "Hạt phấn hoa trong nước bị vô số phân tử nước va chạm không đều từ mọi phía nên chuyển động hỗn loạn. Nhiệt độ cao, hạt nhỏ → chuyển động càng rõ.",
+              "equation": [
+                "Quãng đường dịch chuyển trung bình ⟨x²⟩ ∝ T · t / (η · r)"
+              ],
+              "keywords": [
+                "Brown",
+                "chuyển động nhiệt",
+                "phân tử",
+                "va chạm",
+                "Einstein"
+              ],
+              "path": "physics/brownian.js",
+              "params": [
+                "temp",
+                "radius",
+                "show"
+              ]
+            },
+            {
+              "id": "physics-heating-curve",
+              "title": "Đun nước đá: nhiệt nóng chảy, nhiệt hóa hơi",
+              "summary": "Cấp nhiệt đều cho nước đá −20 °C: nhiệt độ tăng, dừng ở 0 °C khi tan, tăng tiếp, dừng ở 100 °C khi sôi. Đồ thị T–Q có hai đoạn nằm ngang.",
+              "equation": [
+                "Q = m·c·ΔT  (làm nóng một thể)",
+                "Q = m·λ  (nóng chảy, λ nước đá = 334 kJ/kg)",
+                "Q = m·L  (hóa hơi, L nước = 2260 kJ/kg)"
+              ],
+              "keywords": [
+                "nhiệt dung riêng",
+                "nhiệt nóng chảy riêng",
+                "nhiệt hóa hơi riêng",
+                "chuyển thể",
+                "đồ thị nhiệt độ"
+              ],
+              "path": "physics/heating-curve.js",
+              "params": [
+                "power",
+                "mass",
+                "scale"
+              ]
+            },
+            {
+              "id": "physics-thermal-equilibrium",
+              "title": "Cân bằng nhiệt và nhiệt dung riêng",
+              "summary": "Thả vật nóng vào nước lạnh: nhiệt truyền từ vật nóng sang vật lạnh cho đến khi cùng nhiệt độ. Phương trình cân bằng nhiệt Q tỏa = Q thu.",
+              "equation": [
+                "Q = m·c·ΔT",
+                "Q tỏa = Q thu  ⇒  m1·c1·(T1 − T) = m2·c2·(T − T2)",
+                "T = (m1c1T1 + m2c2T2) / (m1c1 + m2c2)"
+              ],
+              "keywords": [
+                "cân bằng nhiệt",
+                "nhiệt dung riêng",
+                "truyền nhiệt",
+                "nhiệt lượng kế"
+              ],
+              "path": "physics/thermal-equilibrium.js",
+              "params": [
+                "mat",
+                "m1",
+                "T1",
+                "m2",
+                "T2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ideal-gas",
+          "title": "Khí lí tưởng",
+          "order": 2,
+          "sims": [
+            {
+              "id": "physics-boyle",
+              "title": "Định luật Boyle: quá trình đẳng nhiệt",
+              "summary": "Nén pit-tông ở nhiệt độ không đổi: thể tích giảm thì áp suất tăng, tích p·V không đổi. Đường đẳng nhiệt là hypebol.",
+              "equation": [
+                "p·V = hằng số  (T không đổi)",
+                "p1·V1 = p2·V2"
+              ],
+              "keywords": [
+                "Boyle",
+                "đẳng nhiệt",
+                "áp suất",
+                "thể tích",
+                "khí lí tưởng",
+                "hypebol"
+              ],
+              "path": "physics/boyle.js",
+              "params": [
+                "V",
+                "T"
+              ]
+            },
+            {
+              "id": "physics-charles",
+              "title": "Định luật Charles (đẳng áp) và đẳng tích – độ không tuyệt đối",
+              "summary": "Nung khí: ở áp suất không đổi thể tích tăng tỉ lệ với T(K); ở thể tích không đổi áp suất tăng tỉ lệ với T(K). Kéo dài đồ thị cắt trục tại −273 °C.",
+              "equation": [
+                "Đẳng áp: V/T = hằng số  ⇒  V1/T1 = V2/T2",
+                "Đẳng tích: p/T = hằng số  ⇒  p1/T1 = p2/T2",
+                "T(K) = t(°C) + 273"
+              ],
+              "keywords": [
+                "Charles",
+                "đẳng áp",
+                "đẳng tích",
+                "độ không tuyệt đối",
+                "Kelvin",
+                "khí lí tưởng"
+              ],
+              "path": "physics/charles.js",
+              "params": [
+                "mode",
+                "t"
+              ]
+            },
+            {
+              "id": "physics-gas-pressure",
+              "title": "Áp suất chất khí từ va chạm phân tử – phương trình trạng thái",
+              "summary": "Đếm va chạm của phân tử lên thành bình để thấy áp suất tăng khi tăng số phân tử, tăng nhiệt độ hoặc giảm thể tích. Kiểm chứng pV = nRT.",
+              "equation": [
+                "p = (1/3)·n·m·v̄²  (n = mật độ phân tử)",
+                "p·V = n·R·T  (phương trình Clapeyron)",
+                "W̄đ = (3/2)·k·T"
+              ],
+              "keywords": [
+                "áp suất",
+                "va chạm",
+                "phương trình trạng thái",
+                "Clapeyron",
+                "khí lí tưởng",
+                "mật độ phân tử"
+              ],
+              "path": "physics/gas-pressure.js",
+              "params": [
+                "N",
+                "T",
+                "V"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "magnetism",
+          "title": "Từ trường",
+          "order": 3,
+          "sims": [
+            {
+              "id": "physics-magnetic-field",
+              "title": "Từ trường của dòng điện: dây thẳng, vòng dây, ống dây",
+              "summary": "Vẽ đường sức từ và kim nam châm quanh dây dẫn thẳng, vòng dây tròn và ống dây. Đổi chiều dòng điện để thấy chiều đường sức đổi theo quy tắc nắm tay phải.",
+              "equation": [
+                "Dây thẳng dài: B = 2·10⁻⁷ · I / r",
+                "Vòng dây tròn (tâm): B = 2π·10⁻⁷ · N·I / R",
+                "Ống dây: B = 4π·10⁻⁷ · n·I  (n = số vòng/mét)"
+              ],
+              "keywords": [
+                "từ trường",
+                "đường sức từ",
+                "cảm ứng từ",
+                "nắm tay phải",
+                "ống dây",
+                "solenoid",
+                "nam châm"
+              ],
+              "path": "physics/magnetic-field.js",
+              "params": [
+                "src",
+                "I",
+                "r"
+              ]
+            },
+            {
+              "id": "physics-lorentz-force",
+              "title": "Lực từ tác dụng lên dây dẫn mang dòng điện",
+              "summary": "Thanh kim loại trên hai ray trong từ trường: cấp dòng điện, thanh bị đẩy theo quy tắc bàn tay trái. F = B·I·L·sinα, đổi chiều I hoặc B thì lực đổi chiều.",
+              "equation": [
+                "F = B·I·L·sinα",
+                "Quy tắc bàn tay trái: B xuyên vào lòng bàn tay, 4 ngón theo chiều I, ngón cái choãi 90° chỉ chiều F"
+              ],
+              "keywords": [
+                "lực từ",
+                "bàn tay trái",
+                "Ampère",
+                "BIL",
+                "động cơ điện",
+                "cân dòng điện"
+              ],
+              "path": "physics/lorentz-force.js",
+              "params": [
+                "B",
+                "I",
+                "L",
+                "alpha"
+              ]
+            },
+            {
+              "id": "physics-faraday-induction",
+              "title": "Cảm ứng điện từ: nam châm chuyển động qua ống dây",
+              "summary": "Đưa nam châm vào/ra ống dây: từ thông biến thiên sinh ra suất điện động cảm ứng, điện kế lệch. Nam châm đứng yên thì không có dòng. Định luật Faraday và Lenz.",
+              "equation": [
+                "Φ = N·B·S·cosα",
+                "e = −ΔΦ/Δt  (định luật Faraday)",
+                "Định luật Lenz: dòng cảm ứng có chiều chống lại sự biến thiên từ thông sinh ra nó"
+              ],
+              "keywords": [
+                "cảm ứng điện từ",
+                "từ thông",
+                "Faraday",
+                "Lenz",
+                "suất điện động cảm ứng",
+                "điện kế",
+                "ống dây"
+              ],
+              "path": "physics/faraday-induction.js",
+              "params": [
+                "motion",
+                "speed",
+                "N",
+                "Bm"
+              ]
+            },
+            {
+              "id": "physics-ac-generator",
+              "title": "Máy phát điện xoay chiều",
+              "summary": "Khung dây quay đều trong từ trường: từ thông biến thiên điều hòa, suất điện động e = E0·sin(ωt). Xem đồ thị Φ(t), e(t) và giá trị hiệu dụng.",
+              "equation": [
+                "Φ = N·B·S·cos(ωt)",
+                "e = −dΦ/dt = N·B·S·ω·sin(ωt) = E0·sin(ωt)",
+                "E0 = N·B·S·ω ;  E = E0/√2 ;  f = ω/2π"
+              ],
+              "keywords": [
+                "máy phát điện",
+                "dòng điện xoay chiều",
+                "suất điện động",
+                "giá trị hiệu dụng",
+                "tần số",
+                "khung dây quay"
+              ],
+              "path": "physics/ac-generator.js",
+              "params": [
+                "omega",
+                "N",
+                "B",
+                "S"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nuclear",
+          "title": "Vật lí hạt nhân",
+          "order": 4,
+          "sims": [
+            {
+              "id": "physics-radioactive-decay",
+              "title": "Phóng xạ và chu kì bán rã",
+              "summary": "Mỗi hạt nhân phân rã ngẫu nhiên nhưng cả tập hợp tuân theo quy luật: sau mỗi chu kì bán rã T, số hạt nhân còn lại giảm một nửa. Đếm hạt và so với đường N = N0·2^(−t/T).",
+              "equation": [
+                "N = N0 · 2^(−t/T) = N0 · e^(−λt)",
+                "λ = ln2 / T",
+                "Độ phóng xạ H = λ·N"
+              ],
+              "keywords": [
+                "phóng xạ",
+                "chu kì bán rã",
+                "hằng số phóng xạ",
+                "alpha",
+                "beta",
+                "gamma",
+                "carbon 14"
+              ],
+              "path": "physics/radioactive-decay.js",
+              "params": [
+                "iso",
+                "N0",
+                "rate"
+              ]
+            },
+            {
+              "id": "physics-fission-fusion",
+              "title": "Phân hạch dây chuyền và nhiệt hạch",
+              "summary": "Neutron bắn vào U-235 làm hạt nhân vỡ thành hai mảnh và 2–3 neutron mới, gây phản ứng dây chuyền; so sánh với nhiệt hạch D + T → He + n ở nhiệt độ hàng trăm triệu độ.",
+              "equation": [
+                "n + ²³⁵U → ¹⁴¹Ba + ⁹²Kr + 3n + ≈ 200 MeV",
+                "²H + ³H → ⁴He + n + 17,6 MeV",
+                "Hệ số nhân neutron k: k < 1 tắt dần, k = 1 duy trì (lò), k > 1 bùng nổ (bom)"
+              ],
+              "keywords": [
+                "phân hạch",
+                "nhiệt hạch",
+                "dây chuyền",
+                "uranium",
+                "neutron",
+                "lò phản ứng",
+                "thanh điều khiển",
+                "năng lượng hạt nhân"
+              ],
+              "path": "physics/fission-fusion.js",
+              "params": [
+                "mode",
+                "density",
+                "control",
+                "temp"
+              ]
+            },
+            {
+              "id": "physics-nucleus",
+              "title": "Cấu tạo hạt nhân và năng lượng liên kết",
+              "summary": "Ghép proton, neutron thành hạt nhân; xem kí hiệu, độ hụt khối, năng lượng liên kết riêng và vị trí trên đồ thị Fe-56 bền nhất.",
+              "equation": [
+                "Kí hiệu: ᴬ_Z X,  A = Z + N",
+                "Δm = Z·m_p + N·m_n − m_hạt nhân",
+                "E_lk = Δm·c²  ;  E_lk riêng = E_lk / A  (lớn nhất ≈ 8,8 MeV ở Fe-56)"
+              ],
+              "keywords": [
+                "hạt nhân",
+                "proton",
+                "neutron",
+                "nucleon",
+                "độ hụt khối",
+                "năng lượng liên kết riêng",
+                "đồng vị",
+                "bán kính hạt nhân"
+              ],
+              "path": "physics/nucleus.js",
+              "params": [
+                "Z",
+                "N"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "legacy",
+          "title": "Mở rộng (kế thừa bản gốc)",
+          "order": 5,
+          "sims": [
+            {
+              "id": "physics-damped-oscillator",
+              "title": "Dao động tắt dần: hệ lò xo – vật – giảm chấn",
+              "summary": "Kế thừa mô phỏng dao động của bản gốc, viết lại bằng JavaScript và bổ sung tần số riêng ωn, tỉ số tắt dần ζ, phân loại tắt dần dưới / tới hạn / trên.",
+              "equation": [
+                "m·x″ + c·x′ + k·x = 0",
+                "ωn = √(k/m) ;  ζ = c / (2√(k·m))",
+                "ζ < 1: tắt dần dưới (dao động) ; ζ = 1: tới hạn ; ζ > 1: tắt dần trên (không dao động)"
+              ],
+              "keywords": [
+                "dao động tắt dần",
+                "lò xo",
+                "giảm chấn",
+                "tần số riêng",
+                "tỉ số tắt dần",
+                "con lắc"
+              ],
+              "path": "physics/damped-oscillator.js",
+              "params": [
+                "m",
+                "k",
+                "c",
+                "x0"
+              ]
+            },
+            {
+              "id": "physics-thin-lens",
+              "title": "Thấu kính hội tụ: dựng ảnh của ngọn nến",
+              "summary": "Kế thừa bài \"Candle Optics\" của bản gốc, sửa lại đúng công thức thấu kính 1/d + 1/d′ = 1/f và vẽ ba tia đặc biệt. Di chuyển nến để thấy ảnh thật/ảo, lớn/nhỏ.",
+              "equation": [
+                "1/f = 1/d + 1/d′",
+                "k = −d′/d  (k < 0: ảnh thật ngược chiều; k > 0: ảnh ảo cùng chiều)",
+                "Thấu kính mỏng: 1/f = (n − 1)(1/R1 − 1/R2)"
+              ],
+              "keywords": [
+                "thấu kính",
+                "hội tụ",
+                "tiêu cự",
+                "ảnh thật",
+                "ảnh ảo",
+                "tia đặc biệt",
+                "số phóng đại"
+              ],
+              "path": "physics/thin-lens.js",
+              "params": [
+                "d",
+                "n",
+                "R",
+                "hObj"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bio",
+      "name": "Sinh học 12",
+      "icon": "🧬",
+      "color": "#4ade80",
+      "chapters": [
+        {
+          "id": "molecular",
+          "title": "Di truyền phân tử",
+          "order": 1,
+          "sims": [
+            {
+              "id": "bio-dna-replication",
+              "title": "Nhân đôi DNA (tái bản)",
+              "summary": "Enzyme helicase tháo xoắn, DNA polymerase lắp nucleotide tự do theo nguyên tắc bổ sung A–T, G–C; hai phân tử con mỗi cái giữ một mạch cũ (bán bảo toàn).",
+              "equation": [
+                "Nguyên tắc bổ sung: A – T, G – C",
+                "Nguyên tắc bán bảo toàn: mỗi DNA con = 1 mạch cũ + 1 mạch mới",
+                "Sau k lần nhân đôi: 2ᵏ phân tử; số nucleotide tự do cần = N·(2ᵏ − 1)"
+              ],
+              "keywords": [
+                "nhân đôi DNA",
+                "tái bản",
+                "helicase",
+                "DNA polymerase",
+                "bán bảo toàn",
+                "bổ sung",
+                "Okazaki",
+                "chạc tái bản"
+              ],
+              "path": "bio/dna-replication.js",
+              "params": [
+                "len",
+                "speed"
+              ]
+            },
+            {
+              "id": "bio-transcription",
+              "title": "Phiên mã: tổng hợp mRNA từ gene",
+              "summary": "RNA polymerase bám vào vùng khởi động, trượt dọc mạch khuôn 3′→5′ và lắp ribonucleotide (A–U, G–C) tạo mRNA chiều 5′→3′; dừng ở tín hiệu kết thúc.",
+              "equation": [
+                "Mạch khuôn (3′→5′): A – U, T – A, G – C, C – G → mRNA (5′→3′)",
+                "mRNA có trình tự giống mạch bổ sung (mạch mã hóa) nhưng T thay bằng U"
+              ],
+              "keywords": [
+                "phiên mã",
+                "mRNA",
+                "RNA polymerase",
+                "mạch khuôn",
+                "mạch mã hóa",
+                "promoter",
+                "gene",
+                "intron exon"
+              ],
+              "path": "bio/transcription.js",
+              "params": [
+                "len",
+                "speed"
+              ]
+            },
+            {
+              "id": "bio-translation",
+              "title": "Dịch mã: ribosome tổng hợp chuỗi polypeptide",
+              "summary": "Ribosome trượt trên mRNA từng codon một; tRNA có anticodon bổ sung mang amino acid tương ứng đến; chuỗi polypeptide dài dần và dừng ở codon kết thúc.",
+              "equation": [
+                "mRNA (codon 5′→3′) ↔ tRNA (anticodon 3′→5′): A–U, G–C",
+                "Mở đầu: AUG (Met) ;  Kết thúc: UAA, UAG, UGA (không mã hóa amino acid)",
+                "Số amino acid trong chuỗi hoàn chỉnh = số codon − 2 (trừ mở đầu và kết thúc)"
+              ],
+              "keywords": [
+                "dịch mã",
+                "ribosome",
+                "tRNA",
+                "anticodon",
+                "codon",
+                "mã di truyền",
+                "polypeptide",
+                "amino acid"
+              ],
+              "path": "bio/translation.js",
+              "params": [
+                "n",
+                "speed"
+              ]
+            },
+            {
+              "id": "bio-lac-operon",
+              "title": "Điều hòa hoạt động gene: operon Lac ở E. coli",
+              "summary": "Không có lactose: protein ức chế bám vào vùng vận hành O, chặn RNA polymerase. Có lactose: lactose bám vào protein ức chế làm nó rời O, các gene Z, Y, A được phiên mã, enzyme phân giải lactose được tạo ra.",
+              "equation": [
+                "Operon Lac = P (khởi động) + O (vận hành) + Z, Y, A (gene cấu trúc)",
+                "Gene điều hòa R (nằm ngoài operon) → protein ức chế",
+                "Lactose + protein ức chế → phức bất hoạt → O tự do → phiên mã"
+              ],
+              "keywords": [
+                "operon Lac",
+                "điều hòa gene",
+                "protein ức chế",
+                "vùng vận hành",
+                "vùng khởi động",
+                "lactose",
+                "E. coli",
+                "Jacob Monod"
+              ],
+              "path": "bio/lac-operon.js",
+              "params": [
+                "lactose",
+                "mutR",
+                "consume"
+              ]
+            },
+            {
+              "id": "bio-gene-mutation",
+              "title": "Đột biến gene và hậu quả lên protein",
+              "summary": "Thay thế, thêm hoặc mất một nucleotide trên gene rồi dịch mã lại: đột biến đồng nghĩa, sai nghĩa, vô nghĩa hay dịch khung – thấy ngay chuỗi amino acid thay đổi thế nào.",
+              "equation": [
+                "Thay thế 1 cặp: ảnh hưởng ≤ 1 codon → đồng nghĩa / sai nghĩa / vô nghĩa",
+                "Thêm / mất 1 cặp: dịch khung đọc từ điểm đột biến → thay đổi hàng loạt amino acid"
+              ],
+              "keywords": [
+                "đột biến gene",
+                "đột biến điểm",
+                "thay thế",
+                "thêm mất nucleotide",
+                "dịch khung",
+                "sai nghĩa",
+                "vô nghĩa",
+                "đồng nghĩa",
+                "tác nhân đột biến"
+              ],
+              "path": "bio/gene-mutation.js",
+              "params": [
+                "type",
+                "pos",
+                "newBase"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chromosome",
+          "title": "Di truyền nhiễm sắc thể",
+          "order": 2,
+          "sims": [
+            {
+              "id": "bio-mitosis-meiosis",
+              "title": "Nguyên phân và giảm phân",
+              "summary": "Theo dõi NST qua từng kì: nguyên phân tạo 2 tế bào 2n giống mẹ; giảm phân tạo 4 giao tử n với tổ hợp NST khác nhau nhờ phân li độc lập và trao đổi chéo.",
+              "equation": [
+                "Nguyên phân: 1 tế bào 2n → 2 tế bào 2n",
+                "Giảm phân: 1 tế bào 2n → 4 tế bào n",
+                "Số loại giao tử (không trao đổi chéo) = 2ⁿ với n cặp NST tương đồng"
+              ],
+              "keywords": [
+                "nguyên phân",
+                "giảm phân",
+                "nhiễm sắc thể",
+                "chromatid",
+                "kì giữa",
+                "kì sau",
+                "giao tử",
+                "tương đồng",
+                "trao đổi chéo"
+              ],
+              "path": "bio/mitosis-meiosis.js",
+              "params": [
+                "mode",
+                "n",
+                "speed"
+              ]
+            },
+            {
+              "id": "bio-chromosome-mutation",
+              "title": "Đột biến nhiễm sắc thể: cấu trúc và số lượng",
+              "summary": "Xem NST bị mất đoạn, lặp đoạn, đảo đoạn, chuyển đoạn; và bộ NST bị lệch bội (2n ± 1) hay đa bội (3n, 4n) với cơ chế do rối loạn phân li.",
+              "equation": [
+                "Cấu trúc: mất đoạn, lặp đoạn, đảo đoạn, chuyển đoạn",
+                "Số lượng: lệch bội (2n ± 1, 2n ± 2…), đa bội (3n, 4n…)",
+                "Cơ chế lệch bội: giao tử (n + 1) × (n) → 2n + 1 ;  đa bội: giao tử 2n × n → 3n"
+              ],
+              "keywords": [
+                "đột biến NST",
+                "mất đoạn",
+                "lặp đoạn",
+                "đảo đoạn",
+                "chuyển đoạn",
+                "lệch bội",
+                "đa bội",
+                "thể ba",
+                "Down",
+                "Turner",
+                "Klinefelter"
+              ],
+              "path": "bio/chromosome-mutation.js",
+              "params": [
+                "group",
+                "stype",
+                "ntype",
+                "n"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mendel",
+          "title": "Quy luật di truyền",
+          "order": 3,
+          "sims": [
+            {
+              "id": "bio-punnett",
+              "title": "Phép lai Mendel: bảng Punnett và tỉ lệ kiểu hình",
+              "summary": "Chọn kiểu gene bố mẹ, xem bảng Punnett cho lai một hoặc hai cặp tính trạng, rồi gieo ngẫu nhiên hàng trăm hạt để so sánh tỉ lệ thực nghiệm với lí thuyết 3:1 hay 9:3:3:1.",
+              "equation": [
+                "Quy luật phân li: Aa × Aa → 1AA : 2Aa : 1aa (3 trội : 1 lặn)",
+                "Phân li độc lập: AaBb × AaBb → 9 : 3 : 3 : 1",
+                "Lai phân tích: Aa × aa → 1 : 1"
+              ],
+              "keywords": [
+                "Mendel",
+                "Punnett",
+                "phân li",
+                "phân li độc lập",
+                "trội lặn",
+                "kiểu gene",
+                "kiểu hình",
+                "lai phân tích",
+                "đậu Hà Lan"
+              ],
+              "path": "bio/punnett.js",
+              "params": [
+                "mode",
+                "p1",
+                "p2",
+                "nSow"
+              ]
+            },
+            {
+              "id": "bio-linkage",
+              "title": "Liên kết gene và hoán vị gene",
+              "summary": "Hai gene cùng nằm trên một NST di truyền cùng nhau (liên kết hoàn toàn); trao đổi chéo ở kì đầu I tạo giao tử hoán vị với tần số f phụ thuộc khoảng cách gene.",
+              "equation": [
+                "Liên kết hoàn toàn: AB/ab → 2 loại giao tử AB = ab = 50%",
+                "Hoán vị với tần số f: AB = ab = (1 − f)/2 ; Ab = aB = f/2",
+                "f ≤ 50%;  1% hoán vị = 1 cM (centimorgan)"
+              ],
+              "keywords": [
+                "liên kết gene",
+                "hoán vị gene",
+                "trao đổi chéo",
+                "tần số hoán vị",
+                "Morgan",
+                "ruồi giấm",
+                "bản đồ di truyền",
+                "centimorgan"
+              ],
+              "path": "bio/linkage.js",
+              "params": [
+                "dist",
+                "phase"
+              ]
+            },
+            {
+              "id": "bio-sex-linked",
+              "title": "Di truyền liên kết giới tính (gene lặn trên X)",
+              "summary": "Bệnh mù màu, máu khó đông do gene lặn trên NST X: con trai nhận X từ mẹ nên biểu hiện bệnh nhiều hơn con gái. Lập bảng lai và gieo ngẫu nhiên con.",
+              "equation": [
+                "Nữ: XᴬXᴬ, XᴬXᵃ (mang gene, bình thường), XᵃXᵃ (bệnh)",
+                "Nam: XᴬY (bình thường), XᵃY (bệnh) – chỉ cần 1 allele lặn",
+                "XᴬXᵃ × XᴬY → 1 XᴬXᴬ : 1 XᴬXᵃ : 1 XᴬY : 1 XᵃY (50% con trai bị bệnh)"
+              ],
+              "keywords": [
+                "liên kết giới tính",
+                "nhiễm sắc thể X",
+                "mù màu",
+                "máu khó đông",
+                "di truyền chéo",
+                "gene lặn",
+                "giới tính"
+              ],
+              "path": "bio/sex-linked.js",
+              "params": [
+                "mom",
+                "dad",
+                "disease"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "population-genetics",
+          "title": "Di truyền quần thể",
+          "order": 4,
+          "sims": [
+            {
+              "id": "bio-hardy-weinberg",
+              "title": "Cân bằng Hardy – Weinberg",
+              "summary": "Quần thể ngẫu phối lớn, không chọn lọc, không đột biến, không di nhập: tần số allele p, q và kiểu gene p², 2pq, q² không đổi qua các thế hệ. Bật chọn lọc để thấy cân bằng bị phá vỡ.",
+              "equation": [
+                "p + q = 1",
+                "p² (AA) + 2pq (Aa) + q² (aa) = 1",
+                "Quần thể cân bằng khi tần số kiểu gene đúng bằng p², 2pq, q²"
+              ],
+              "keywords": [
+                "Hardy Weinberg",
+                "tần số allele",
+                "tần số kiểu gene",
+                "ngẫu phối",
+                "cân bằng di truyền",
+                "quần thể",
+                "chọn lọc"
+              ],
+              "path": "bio/hardy-weinberg.js",
+              "params": [
+                "AA",
+                "aa",
+                "mating",
+                "sel"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "evolution",
+          "title": "Tiến hóa",
+          "order": 5,
+          "sims": [
+            {
+              "id": "bio-natural-selection",
+              "title": "Chọn lọc tự nhiên: bướm đêm và màu nền",
+              "summary": "Quần thể bướm có màu sáng/tối trên thân cây; chim săn mồi dễ bắt con nổi bật. Đổi màu nền (ô nhiễm công nghiệp) và xem tần số allele thay đổi qua các thế hệ.",
+              "equation": [
+                "Chọn lọc tự nhiên tác động lên kiểu hình → làm thay đổi tần số allele theo hướng xác định",
+                "Giá trị thích nghi w = tỉ lệ sống sót & sinh sản tương đối"
+              ],
+              "keywords": [
+                "chọn lọc tự nhiên",
+                "Darwin",
+                "thích nghi",
+                "bướm đêm",
+                "Biston betularia",
+                "tần số allele",
+                "tiến hóa",
+                "kiểu hình"
+              ],
+              "path": "bio/natural-selection.js",
+              "params": [
+                "bg",
+                "pred",
+                "auto"
+              ]
+            },
+            {
+              "id": "bio-genetic-drift",
+              "title": "Phiêu bạt di truyền (trôi dạt gene) và hiệu ứng cổ chai",
+              "summary": "Ở quần thể nhỏ, tần số allele thay đổi ngẫu nhiên qua mỗi thế hệ và có thể bị cố định hoặc mất hẳn dù không có chọn lọc. So sánh 5 quần thể cùng xuất phát.",
+              "equation": [
+                "Phiêu bạt: biến động ngẫu nhiên của tần số allele, không có hướng",
+                "Phương sai thay đổi tần số mỗi thế hệ ≈ p·q / (2N) → N nhỏ: biến động lớn"
+              ],
+              "keywords": [
+                "phiêu bạt di truyền",
+                "trôi dạt gene",
+                "yếu tố ngẫu nhiên",
+                "cổ chai",
+                "hiệu ứng sáng lập",
+                "quần thể nhỏ",
+                "cố định allele"
+              ],
+              "path": "bio/genetic-drift.js",
+              "params": [
+                "N",
+                "p0",
+                "speed"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ecology",
+          "title": "Sinh thái học",
+          "order": 6,
+          "sims": [
+            {
+              "id": "bio-population-growth",
+              "title": "Tăng trưởng quần thể: hình chữ J và chữ S",
+              "summary": "Quần thể trong môi trường không giới hạn tăng theo hàm mũ (chữ J); khi có sức chứa K của môi trường, tăng trưởng chậm lại và ổn định quanh K (chữ S).",
+              "equation": [
+                "Không giới hạn: dN/dt = r·N  →  N = N0·e^(rt)",
+                "Có giới hạn (logistic): dN/dt = r·N·(1 − N/K)",
+                "r = tỉ lệ sinh − tỉ lệ tử (+ nhập cư − xuất cư)"
+              ],
+              "keywords": [
+                "tăng trưởng quần thể",
+                "kích thước quần thể",
+                "sức chứa môi trường",
+                "hàm mũ",
+                "logistic",
+                "chữ J",
+                "chữ S",
+                "mật độ"
+              ],
+              "path": "bio/population-growth.js",
+              "params": [
+                "mode",
+                "r",
+                "K",
+                "N0"
+              ]
+            },
+            {
+              "id": "bio-predator-prey",
+              "title": "Quan hệ vật ăn thịt – con mồi (thỏ và cáo)",
+              "summary": "Số lượng con mồi tăng → vật ăn thịt tăng theo → con mồi giảm → vật ăn thịt giảm: hai quần thể dao động lệch pha, khống chế sinh học lẫn nhau (mô hình Lotka–Volterra).",
+              "equation": [
+                "Con mồi: dN/dt = a·N − b·N·P",
+                "Vật ăn thịt: dP/dt = c·N·P − d·P",
+                "Dao động theo chu kì, đỉnh của vật ăn thịt trễ hơn đỉnh con mồi"
+              ],
+              "keywords": [
+                "vật ăn thịt",
+                "con mồi",
+                "Lotka Volterra",
+                "khống chế sinh học",
+                "biến động số lượng",
+                "chu kì",
+                "quan hệ khác loài",
+                "cân bằng sinh học"
+              ],
+              "path": "bio/predator-prey.js",
+              "params": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            },
+            {
+              "id": "bio-food-web",
+              "title": "Chuỗi, lưới thức ăn và tháp năng lượng",
+              "summary": "Chọn một sinh vật để tô sáng các chuỗi thức ăn đi qua nó; xem năng lượng giảm khoảng 90% qua mỗi bậc dinh dưỡng (quy luật 10%) và tác động khi một loài biến mất.",
+              "equation": [
+                "Hiệu suất sinh thái ≈ 10%: năng lượng bậc n+1 ≈ 10% năng lượng bậc n",
+                "Sinh vật sản xuất → SV tiêu thụ bậc 1 → bậc 2 → bậc 3 → SV phân giải"
+              ],
+              "keywords": [
+                "chuỗi thức ăn",
+                "lưới thức ăn",
+                "bậc dinh dưỡng",
+                "tháp sinh thái",
+                "tháp năng lượng",
+                "hiệu suất sinh thái",
+                "sinh vật sản xuất",
+                "sinh vật tiêu thụ"
+              ],
+              "path": "bio/food-web.js",
+              "params": [
+                "focus",
+                "remove",
+                "E1"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

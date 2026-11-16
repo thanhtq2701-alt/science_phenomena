@@ -1,44 +1,47 @@
-# 🌐 Interactive Vibration Lab (Streamlit)
+# 🔬 Science Phenomenons 12 – Phòng thí nghiệm ảo Hóa · Lí · Sinh
 
-This web application transforms the theoretical mass-spring-damper model into an interactive dashboard. It allows engineers and students to visualize mechanical vibrations in real-time without modifying Python code.
+Web mô phỏng tương tác cho học sinh lớp 12 (Chương trình GDPT 2018): phản ứng Hóa học, thí nghiệm Vật lí và hình động Sinh học. JavaScript thuần + Canvas, phục vụ bằng Express, không cần bước build.
 
-## 🚀 Web Interface Usage
+## Chạy trên máy
 
-The dashboard is designed for intuitive "what-if" analysis of mechanical systems.
+```bash
+npm install
+npm start          # http://localhost:3000
+npm run dev        # tự khởi động lại khi sửa server
+npm test           # kiểm tra mọi module mô phỏng + server
+npm run catalog    # sinh data/catalog.json từ các module
+```
 
-### 1. Real-Time Parameter Tuning
-Use the **Sidebar Sliders** to manipulate the physical properties of the system:
-* **Mass ($m$):** Increasing mass increases inertia, leading to slower oscillations.
-* **Spring Constant ($k$):** Increasing stiffness raises the natural frequency and increases the restoring force.
-* **Damping ($c$):** Controls energy dissipation. Transition between a bouncy, **underdamped** state to a stable, **overdamped** response.
+## Bố cục repo
 
-### 2. Live Physics Metrics
-The app automatically calculates and displays key engineering values in the header:
-* **Natural Frequency ($\omega_n$):** Calculated as $\sqrt{k/m}$.
-* **Damping Ratio ($\zeta$):** Defines the system's behavior (Underdamped vs. Overdamped).
-* **System State:** A dynamic label that tells you exactly how the system is behaving based on your inputs.
+```
+data/       curriculum.json (môn → chương), catalog.json (sinh tự động)
+docs/       LEGACY_REVIEW.md – rà soát bản Streamlit cũ, PROJECT.md – kiến trúc & danh sách bài
+old/        bản Streamlit (Python) gốc, giữ để tham chiếu
+server/     Express: static + /api/catalog, /api/health, /api/feedback
+tests/      node --test: kiểm tra metadata, chạy thử update/draw mọi bài
+tools/      build-catalog.js
+web/        index.html, css/, js/app.js (router), js/core/ (engine, draw, ui), js/sims/<môn>/
+```
 
+## Thêm một bài mô phỏng
 
+1. Tạo `web/js/sims/<chem|physics|bio>/<ten-bai>.js` với `export default { id, subject, chapter, title, summary, equation, theory, observe, exam, params, actions, create(ctx) }`.
+2. `create()` trả về `{ update(dt, p, t), draw(g, w, h, p, t), metrics?(p), action?(key, p), onParam?(key, p) }`.
+3. Thêm đường dẫn vào `SIM_PATHS` trong `web/js/core/registry.js`, chạy `npm test`.
 
-### 3. Interactive Visualization
-As you adjust any slider, the physics engine (using `scipy.integrate`) re-solves the Ordinary Differential Equation (ODE) and updates the **Displacement vs. Time** plot instantly.
+## Tiến độ
 
-![Results](./assets/realresults.png)
+| Môn | Bài đã có | Trạng thái |
+|---|---|---|
+| Hóa học 12 | 16 | ✅ đủ 8 chương |
+| Vật lí 12 | 16 | ✅ đủ 4 chương + 2 bài kế thừa bản gốc |
+| Sinh học 12 | 16 | ✅ đủ 6 chương |
 
-## 🛠️ Deployment Instructions
+## Deploy Render
 
-To launch the web interface locally:
+Đã có `render.yaml` (runtime Node, `npm start`). Tạo Web Service mới trỏ vào repo là chạy.
 
-1. **Install Streamlit:**
+## Tác giả
 
-   ```bash
-   pip install streamlit numpy scipy matplotlib
-   ```
-
-
-
-
-## About me
-
-- Tran Quoc Thanh
-- thanhtq2701@gmail.com
+Trần Quốc Thành · [GitHub](https://github.com/thanhtq2701-alt)

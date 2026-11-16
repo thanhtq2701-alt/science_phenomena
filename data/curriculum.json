@@ -1,0 +1,129 @@
+{
+  "subjects": [
+    {
+      "id": "chem",
+      "name": "Hóa học 12",
+      "short": "Hóa",
+      "icon": "⚗️",
+      "color": "#f97316",
+      "tagline": "Mô phỏng phản ứng: từ ester, carbohydrate đến pin điện và kim loại.",
+      "chapters": [
+        {
+          "id": "ester-lipid",
+          "order": 1,
+          "title": "Ester – Lipid"
+        },
+        {
+          "id": "carbohydrate",
+          "order": 2,
+          "title": "Carbohydrate"
+        },
+        {
+          "id": "nitrogen",
+          "order": 3,
+          "title": "Hợp chất chứa nitrogen"
+        },
+        {
+          "id": "polymer",
+          "order": 4,
+          "title": "Polymer"
+        },
+        {
+          "id": "electrochem",
+          "order": 5,
+          "title": "Pin điện và điện phân"
+        },
+        {
+          "id": "metals",
+          "order": 6,
+          "title": "Đại cương về kim loại"
+        },
+        {
+          "id": "group-ia-iia",
+          "order": 7,
+          "title": "Nguyên tố nhóm IA, IIA"
+        },
+        {
+          "id": "transition",
+          "order": 8,
+          "title": "Kim loại chuyển tiếp & phức chất"
+        }
+      ]
+    },
+    {
+      "id": "physics",
+      "name": "Vật lí 12",
+      "short": "Lý",
+      "icon": "🧲",
+      "color": "#38bdf8",
+      "tagline": "Thí nghiệm ảo: vật lí nhiệt, khí lí tưởng, từ trường và hạt nhân.",
+      "chapters": [
+        {
+          "id": "thermal",
+          "order": 1,
+          "title": "Vật lí nhiệt"
+        },
+        {
+          "id": "ideal-gas",
+          "order": 2,
+          "title": "Khí lí tưởng"
+        },
+        {
+          "id": "magnetism",
+          "order": 3,
+          "title": "Từ trường"
+        },
+        {
+          "id": "nuclear",
+          "order": 4,
+          "title": "Vật lí hạt nhân"
+        },
+        {
+          "id": "legacy",
+          "order": 5,
+          "title": "Mở rộng (kế thừa bản gốc)"
+        }
+      ]
+    },
+    {
+      "id": "bio",
+      "name": "Sinh học 12",
+      "short": "Sinh",
+      "icon": "🧬",
+      "color": "#4ade80",
+      "tagline": "Diễn giải hình động: di truyền phân tử, quy luật Mendel, tiến hóa và sinh thái.",
+      "chapters": [
+        {
+          "id": "molecular",
+          "order": 1,
+          "title": "Di truyền phân tử"
+        },
+        {
+          "id": "chromosome",
+          "order": 2,
+          "title": "Di truyền nhiễm sắc thể"
+        },
+        {
+          "id": "mendel",
+          "order": 3,
+          "title": "Quy luật di truyền"
+        },
+        {
+          "id": "population-genetics",
+          "order": 4,
+          "title": "Di truyền quần thể"
+        },
+        {
+          "id": "evolution",
+          "order": 5,
+          "title": "Tiến hóa"
+        },
+        {
+          "id": "ecology",
+          "order": 6,
+          "title": "Sinh thái học"
+        }
+      ]
+    }
+  ]
+}

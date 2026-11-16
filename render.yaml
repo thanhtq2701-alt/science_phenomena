@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: science-phenomenons
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
