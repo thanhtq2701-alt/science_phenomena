@@ -38,9 +38,14 @@ web/        index.html, css/, js/app.js (router), js/core/ (engine, draw, ui), j
 | Vật lí 12 | 16 | ✅ đủ 4 chương + 2 bài kế thừa bản gốc |
 | Sinh học 12 | 16 | ✅ đủ 6 chương |
 
-## Deploy Render
+## Deploy Render + Upstash (giống repo Hackathon)
 
-Đã có `render.yaml` (runtime Node, `npm start`). Tạo Web Service mới trỏ vào repo là chạy.
+1. **Upstash**: tạo database Redis (free) → tab *REST API* → copy `UPSTASH_REDIS_REST_URL` và `UPSTASH_REDIS_REST_TOKEN`.
+2. **Render** → New → *Blueprint* (đọc `render.yaml`) hoặc *Web Service*: Language `Node`, Build `npm ci --omit=dev && npm run catalog`, Start `npm start`, Health Check `/healthz`.
+3. Environment: điền 2 biến Upstash ở trên và `ADMIN_KEY` (chuỗi bí mật tùy ý).
+4. Deploy xong có link dạng `https://<tên-service>.onrender.com`. Free tier ngủ sau 15 phút không có người xem, lần mở đầu mất 30–60 s.
+
+Dữ liệu lưu trên Upstash: phản hồi (`/api/feedback`, tối đa 500 mục, xem bằng `/api/feedback?key=ADMIN_KEY`) và lượt mở từng bài (`/api/stats`). Không có biến Upstash thì server ghi file JSON vào `var/` (mất khi Render restart).
 
 ## Tác giả
 

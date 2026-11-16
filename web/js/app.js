@@ -173,6 +173,7 @@ function renderSim(id) {
 
   const runner = new Runner(canvas, sim, params);
   state.runner = runner;
+  fetch('/api/view', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sim: sim.id }) }).catch(() => {});
   document.getElementById('actions').replaceWith(buildActions(sim, runner));
   let acc = 0;
   runner.onFrame((r) => {

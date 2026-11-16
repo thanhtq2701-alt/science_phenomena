@@ -3,8 +3,17 @@ services:
     name: science-phenomenons
     runtime: node
     plan: free
-    buildCommand: npm ci --omit=dev
+    buildCommand: npm ci --omit=dev && npm run catalog
     startCommand: npm start
+    healthCheckPath: /healthz
     envVars:
       - key: NODE_VERSION
         value: "20"
+      # Điền trong Render Dashboard (Environment) – lấy từ Upstash Redis > REST API
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
+      # Khóa để xem phản hồi tại /api/feedback?key=...
+      - key: ADMIN_KEY
+        sync: false
