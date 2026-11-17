@@ -77,9 +77,9 @@ Bảng sinh tự động từ data/catalog.json (chạy `npm run catalog`).
 
 ## Triển khai
 
-- Đang chạy: **https://science-phenomenons.onrender.com** (Render Static Site, cấu hình trong , build  → ). Mỗi lần push lên , Render tự build lại.
+- Đang chạy: **https://science-phenomenons.onrender.com** (Render Static Site, cấu hình trong `render.yaml`, build `npm run build` → `dist/`). Mỗi lần push lên `main`, Render tự build lại.
 - Bản tĩnh không có server nên form góp ý tự ẩn. Muốn có góp ý: chuyển sang Web Service (xem README), thêm Upstash nếu cần lưu lâu dài.
-- Link có thể đặt sẵn tham số: , ví dụ .
+- Link có thể đặt sẵn tham số: `#/sim/<id>?<key>=<giá trị>`, ví dụ `#/sim/physics-kinetic-model?temp=610`.
 - Đã kiểm tra trên máy tính (Chrome) và điện thoại.
 
 ## Việc có thể làm tiếp
