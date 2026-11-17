@@ -15,6 +15,20 @@
 |---|---|
 | **https://science-phenomenons.onrender.com** | Đầy đủ 81 mô phỏng. Render Static Site: mở nhanh, không bị ngủ. |
 
+## 📸 Hình ảnh
+
+**Dịch mã**: ribosome trượt trên mRNA, tRNA mang amino acid tới, chuỗi polypeptide dài dần.
+
+![Mô phỏng dịch mã: ribosome, tRNA và chuỗi polypeptide](docs/images/bio-translation.png)
+
+**Mô hình động học phân tử**: kéo nhiệt độ để thấy chất rắn chuyển sang lỏng rồi khí.
+
+![Mô phỏng mô hình động học phân tử ở thể khí](docs/images/physics-kinetic-model.png)
+
+**Lên men glucose**: ở 70 °C enzyme của nấm men bị biến tính, quá trình lên men dừng lại.
+
+![Mô phỏng lên men glucose thành ethanol](docs/images/chem-fermentation.png)
+
 ## ✨ Có gì bên trong
 
 | Môn | Số bài | Ví dụ |
