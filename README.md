@@ -13,7 +13,7 @@
 
 | Link | Ghi chú |
 |---|---|
-| _(sẽ cập nhật sau khi deploy Render)_ | Render Static Site: mở nhanh, không bị ngủ. |
+| **https://science-phenomenons.onrender.com** | Đầy đủ 81 mô phỏng. Render Static Site: mở nhanh, không bị ngủ. |
 
 ## ✨ Có gì bên trong
 
