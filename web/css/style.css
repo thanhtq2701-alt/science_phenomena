@@ -94,7 +94,9 @@ code { background: #1e293b; padding: 1px 6px; border-radius: 5px; font-size: .92
 .side-link:hover { background: var(--panel2); color: var(--text); }
 .side-link.active { background: var(--panel2); color: var(--text); font-weight: 700; }
 .count { font-size: .75rem; background: var(--bg2); padding: 1px 7px; border-radius: 999px; }
-.chapter { margin: 24px 0; }
+.chapter { margin: 24px 0; scroll-margin-top: 80px; }
+/* Chương cuối đủ cao để bấm vào vẫn cuộn được lên sát thanh tiêu đề */
+.subject-main .chapter:last-child { min-height: calc(100vh - 110px); }
 .chapter h3 { margin-bottom: 12px; }
 
 /* Sim page */

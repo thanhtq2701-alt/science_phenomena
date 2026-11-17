@@ -3,7 +3,7 @@ import { loadAllSims } from './core/registry.js';
 import { Runner, defaultParams } from './core/engine.js';
 import { el, buildControls, buildActions, renderMetrics, md, chem } from './core/ui.js';
 
-const state = { curriculum: null, sims: [], runner: null, ready: false, api: false };
+const state = { curriculum: null, sims: [], runner: null, ready: false, api: false, view: null, spy: null };
 
 // Có server Node (Render Web Service / chạy local) thì bật góp ý + thống kê; bản tĩnh thì tự tắt.
 const apiReady = fetch('/api/health', { cache: 'no-store' })
@@ -30,18 +30,40 @@ function chapterOf(sub, id) { return sub.chapters.find((c) => c.id === id); }
 function simsOf(subId, chapId) { return state.sims.filter((s) => s.subject === subId && (!chapId || s.chapter === chapId)); }
 
 function route() {
-  if (state.runner) { state.runner.destroy(); state.runner = null; }
-  const hash = location.hash.replace(/^#\/?/, '');
-  const [page, a, b] = hash.split('/');
+  // Hash dạng #/<trang>/<id>?<tham số>, ví dụ #/physics/ideal-gas hoặc #/sim/physics-boyle?V=1.5
+  const raw = location.hash.replace(/^#\/?/, '');
+  const [path, query = ''] = raw.split('?');
+  const [page, a] = path.split('/');
   document.querySelectorAll('.nav a').forEach((n) => n.classList.toggle('active', n.getAttribute('href') === '#/' + (page || '')));
+  const sub = subjectOf(page);
+  // Cùng một môn: chỉ cuộn tới chương, không vẽ lại trang
+  if (sub && state.view === 'subject:' + sub.id) return focusChapter(sub, a || null, true);
+  if (state.runner) { state.runner.destroy(); state.runner = null; }
+  if (state.spy) { state.spy.disconnect(); state.spy = null; }
+  state.view = null;
   window.scrollTo(0, 0);
   if (!page) return renderHome();
   if (page === 'about') return renderAbout();
-  if (page === 'sim' && a) return renderSim(a);
+  if (page === 'sim' && a) return renderSim(a, new URLSearchParams(query));
   if (page === 'search') return renderSearch(decodeURIComponent(a || ''));
-  const sub = subjectOf(page);
-  if (sub) return renderSubject(sub, b || null);
+  if (sub) { renderSubject(sub); return focusChapter(sub, a || null, false); }
   renderHome();
+}
+
+/** Tô sáng chương trên thanh bên và cuộn tới chương đó (hoặc lên đầu nếu chapId rỗng) */
+function focusChapter(sub, chapId, smooth) {
+  setActiveChapter(chapId);
+  state.spyLockUntil = Date.now() + (smooth ? 1200 : 300); // không để theo dõi cuộn ghi đè trong lúc đang cuộn
+  const behavior = smooth ? 'smooth' : 'auto';
+  requestAnimationFrame(() => {
+    const target = chapId && document.getElementById('chap-' + chapId);
+    if (target) target.scrollIntoView({ behavior, block: 'start' });
+    else window.scrollTo({ top: 0, behavior });
+  });
+}
+
+function setActiveChapter(chapId) {
+  document.querySelectorAll('.side-link').forEach((n) => n.classList.toggle('active', (n.dataset.chap || '') === (chapId || '')));
 }
 
 // ---------- Trang chủ ----------
@@ -91,26 +113,40 @@ function simCard(sim) {
 }
 
 // ---------- Trang môn học ----------
-function renderSubject(sub, chapId) {
+function renderSubject(sub) {
   const side = el('aside', { class: 'sidebar' },
     el('h3', {}, sub.icon + ' ' + sub.name),
-    el('a', { class: 'side-link' + (!chapId ? ' active' : ''), href: '#/' + sub.id }, 'Tất cả', el('span', { class: 'count' }, simsOf(sub.id).length)),
-    ...sub.chapters.map((c) => el('a', { class: 'side-link' + (chapId === c.id ? ' active' : ''), href: `#/${sub.id}/${c.id}` }, `${c.order}. ${c.title}`, el('span', { class: 'count' }, simsOf(sub.id, c.id).length)))
+    el('a', { class: 'side-link active', href: '#/' + sub.id, 'data-chap': '' }, 'Tất cả', el('span', { class: 'count' }, simsOf(sub.id).length)),
+    ...sub.chapters.map((c) => el('a', { class: 'side-link', href: `#/${sub.id}/${c.id}`, 'data-chap': c.id }, `${c.order}. ${c.title}`, el('span', { class: 'count' }, simsOf(sub.id, c.id).length)))
   );
-  const chapters = chapId ? sub.chapters.filter((c) => c.id === chapId) : sub.chapters;
+  const sections = sub.chapters.map((c) => {
+    const list = simsOf(sub.id, c.id);
+    if (!list.length) return null;
+    return el('section', { class: 'chapter', id: 'chap-' + c.id, 'data-chap': c.id },
+      el('h3', {}, `Chương ${c.order}. ${c.title}`),
+      el('div', { class: 'grid' }, list.map(simCard))
+    );
+  }).filter(Boolean);
   const main = el('div', { class: 'subject-main' },
-    el('h1', { style: `--c:${sub.color}` }, chapId ? chapterOf(sub, chapId).title : sub.name),
+    el('h1', { style: `--c:${sub.color}` }, sub.name),
     el('p', { class: 'lead' }, sub.tagline),
-    ...chapters.map((c) => {
-      const list = simsOf(sub.id, c.id);
-      if (!list.length) return null;
-      return el('section', { class: 'chapter' },
-        el('h3', {}, `Chương ${c.order}. ${c.title}`),
-        el('div', { class: 'grid' }, list.map(simCard))
-      );
-    })
+    ...sections
   );
   app.replaceChildren(el('div', { class: 'layout-side' }, side, main));
+  state.view = 'subject:' + sub.id;
+
+  // Khi người dùng tự cuộn: tô sáng chương đang nằm ở phần trên màn hình
+  if ('IntersectionObserver' in window) {
+    state.spy = new IntersectionObserver((entries) => {
+      if (Date.now() < (state.spyLockUntil || 0)) return;
+      const visible = entries.filter((e) => e.isIntersecting).sort((x, y) => x.boundingClientRect.top - y.boundingClientRect.top);
+      if (!visible.length) return;
+      const first = sections[0] && sections[0].dataset.chap;
+      const chap = visible[0].target.dataset.chap;
+      setActiveChapter(window.scrollY < 40 && chap === first ? '' : chap);
+    }, { rootMargin: '-80px 0px -60% 0px' });
+    sections.forEach((s) => state.spy.observe(s));
+  }
 }
 
 // ---------- Tìm kiếm ----------
@@ -126,7 +162,7 @@ function renderSearch(q) {
 }
 
 // ---------- Trang mô phỏng ----------
-function renderSim(id) {
+function renderSim(id, query = new URLSearchParams()) {
   const sim = state.sims.find((s) => s.id === id);
   if (!sim) { app.replaceChildren(el('h1', {}, 'Không tìm thấy mô phỏng'), el('a', { href: '#/' }, '← Trang chủ')); return; }
   const sub = subjectOf(sim.subject);
@@ -135,7 +171,7 @@ function renderSim(id) {
   const idx = list.indexOf(sim);
   const prev = list[idx - 1], next = list[idx + 1];
 
-  const params = defaultParams(sim);
+  const params = applyQuery(sim, defaultParams(sim), query);
   const canvas = el('canvas', { class: 'stage' });
   const metricsBox = el('div', { class: 'metrics' });
   const controls = buildControls(sim, params, (k, v) => state.runner && state.runner.setParam(k, v));
@@ -188,6 +224,19 @@ function renderSim(id) {
     if (acc % 6 !== 0 || !r.inst || !r.inst.metrics) return;
     renderMetrics(metricsBox, r.inst.metrics(r.params, r.time));
   });
+}
+
+/** Đặt sẵn tham số từ link, vd #/sim/physics-kinetic-model?temp=610 (bỏ qua giá trị không hợp lệ) */
+function applyQuery(sim, params, query) {
+  for (const spec of sim.params || []) {
+    if (!query.has(spec.key)) continue;
+    const raw = query.get(spec.key);
+    const type = spec.type || 'range';
+    if (type === 'range') { const v = Number(raw); if (Number.isFinite(v)) params[spec.key] = Math.min(spec.max, Math.max(spec.min, v)); }
+    else if (type === 'toggle') params[spec.key] = raw === '1' || raw === 'true';
+    else if (type === 'select') { const opt = spec.options.find((o) => String(o[0]) === raw); if (opt) params[spec.key] = opt[0]; }
+  }
+  return params;
 }
 
 function chemMd(t) { return md(t).replace(/\{\{(.+?)\}\}/g, (m, f) => chem(f)); }

@@ -55,7 +55,8 @@ export default {
       draw(g, w, h, p, t) {
         const bx = 40, by = 50, bw = Math.min(420, w * 0.5), bh = h - 100;
         g.fillStyle = 'rgba(30,41,59,0.5)'; roundRect(g, bx, by, bw, bh, 10); g.fill(); g.strokeStyle = COLORS.grid; g.lineWidth = 2; g.stroke();
-        const r = Math.min(bw, bh) / 20;
+        // Thể khí: phân tử nhỏ so với khoảng cách giữa chúng (≈ 10 lần kích thước) nên vẽ bán kính nhỏ hơn
+        const r = Math.min(bw, bh) / 20 * (st.state === 'gas' ? 0.4 : 1);
         const col = st.state === 'solid' ? '#60a5fa' : st.state === 'liquid' ? '#38bdf8' : '#fbbf24';
         for (const q of st.p) circle(g, bx + 10 + q.x * (bw - 20 - 2 * r) + r, by + 10 + q.y * (bh - 20 - 2 * r) + r, r, col, 'rgba(0,0,0,0.3)');
         if (st.state === 'solid') for (let i = 0; i < st.p.length; i++) { const q = st.p[i]; if (i % 8 < 7) { const n = st.p[i + 1]; line(g, bx + 10 + q.x * (bw - 20 - 2 * r) + r, by + 10 + q.y * (bh - 20 - 2 * r) + r, bx + 10 + n.x * (bw - 20 - 2 * r) + r, by + 10 + n.y * (bh - 20 - 2 * r) + r, 'rgba(96,165,250,0.25)', 1); } }
