@@ -1,16 +1,19 @@
 services:
+  # Static Site: không ngủ, mở nhanh. Build chỉ dùng module có sẵn của Node, không cần npm install.
   - type: web
     name: science-phenomenons
-    runtime: node
-    plan: free
-    buildCommand: npm ci --omit=dev && npm run catalog
-    startCommand: npm start
-    healthCheckPath: /healthz
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
     envVars:
       - key: NODE_VERSION
         value: "20"
-      # Khóa xem phản hồi tại /api/feedback?key=... (Render tự sinh, xem trong tab Environment)
-      - key: ADMIN_KEY
-        generateValue: true
-      # Upstash là tùy chọn: thêm UPSTASH_REDIS_REST_URL và UPSTASH_REDIS_REST_TOKEN nếu muốn
-      # phản hồi/thống kê không mất khi Render khởi động lại. Không có thì lưu file tạm trong var/.
+    headers:
+      - path: /js/*
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /data/*
+        name: Cache-Control
+        value: public, max-age=3600
+# Muốn có form góp ý thì đổi sang Web Service: runtime node, buildCommand "npm ci --omit=dev && npm run catalog",
+# startCommand "npm start", healthCheckPath /healthz (xem README).

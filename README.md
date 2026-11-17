@@ -5,13 +5,15 @@
 ![Node](https://img.shields.io/badge/node-%E2%89%A518-339933?logo=node.js&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Canvas-f7df1e?logo=javascript&logoColor=black)
 
-**81 mô phỏng tương tác** cho học sinh lớp 12 theo Chương trình GDPT 2018: phản ứng Hóa học, thí nghiệm Vật lí và hình động Sinh học. Kéo thanh trượt, bấm nút, quan sát hiện tượng và số liệu thay đổi ngay. JavaScript thuần + Canvas, không cần cài thêm gì trên trình duyệt.
+**Bước vào phòng thí nghiệm không giới hạn.** Phản ứng hóa học bùng lên, từ trường hiện hình, DNA tự nhân đôi, ngay trên trình duyệt. Kéo thanh trượt, bấm nút và nhìn khoa học vận hành trước mắt bạn.
+
+81 mô phỏng tương tác cho chương trình Hóa – Lí – Sinh lớp 12. JavaScript thuần + Canvas, không cần cài đặt.
 
 ## 🌐 Dùng thử
 
 | Link | Ghi chú |
 |---|---|
-| _(sẽ cập nhật sau khi deploy Render)_ | Bản miễn phí: sau 15 phút không có người xem, lần mở đầu chờ 30–60 giây. |
+| _(sẽ cập nhật sau khi deploy Render)_ | Render Static Site: mở nhanh, không bị ngủ. |
 
 ## ✨ Có gì bên trong
 
@@ -57,9 +59,9 @@ science_phenomenons/
 
 ## 🚀 Deploy trên Render
 
-**Web Service** (mặc định, đã có `render.yaml`): New → Blueprint → chọn repo. Build `npm ci --omit=dev && npm run catalog`, Start `npm start`, Health Check `/healthz`. Có form góp ý và thống kê lượt mở bài, lưu file tạm trong `var/` (mất khi Render khởi động lại).
+**Static Site** (đang dùng, cấu hình trong `render.yaml`): New → Blueprint → chọn repo. Build `npm run build`, Publish directory `dist`. Không ngủ, mở nhanh; form góp ý tự ẩn vì không có server.
 
-**Static Site** (không ngủ, mở nhanh): Build `npm run build`, Publish directory `dist`. Form góp ý tự ẩn vì không có server.
+**Web Service** (nếu muốn có form góp ý và thống kê lượt mở bài): Build `npm ci --omit=dev && npm run catalog`, Start `npm start`, Health Check `/healthz`. Dữ liệu lưu file tạm trong `var/`, mất khi Render khởi động lại.
 
 Upstash Redis là tùy chọn: đặt `UPSTASH_REDIS_REST_URL` và `UPSTASH_REDIS_REST_TOKEN` cho Web Service nếu muốn góp ý không bị mất.
 
