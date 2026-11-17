@@ -75,8 +75,15 @@ Bảng sinh tự động từ data/catalog.json (chạy `npm run catalog`).
 - `tests/science.test.js`: 21 phép đối chiếu đáp số với SGK.
 - `tests/server.test.js`, `tests/storage.test.js`: server, API, kho Upstash/file.
 
+## Triển khai
+
+- Đang chạy: **https://science-phenomenons.onrender.com** (Render Static Site, cấu hình trong , build  → ). Mỗi lần push lên , Render tự build lại.
+- Bản tĩnh không có server nên form góp ý tự ẩn. Muốn có góp ý: chuyển sang Web Service (xem README), thêm Upstash nếu cần lưu lâu dài.
+- Link có thể đặt sẵn tham số: , ví dụ .
+- Đã kiểm tra trên máy tính (Chrome) và điện thoại.
+
 ## Việc có thể làm tiếp
-- Kiểm tra trực quan từng bài trên nhiều kích thước màn hình (đặc biệt điện thoại); vài bài bố cục dày khi w < 700 px.
-- Thêm bài: cân bằng hóa học động, khúc xạ/giao thoa (nếu mở rộng ra lớp 11), hệ sinh thái tự điều chỉnh.
-- Lưu phản hồi (`/api/feedback`) vào cơ sở dữ liệu thay vì file khi deploy nhiều instance.
-- Thêm chế độ "bài tập": ẩn số liệu, yêu cầu học sinh dự đoán trước khi chạy.
+
+- Mở rộng sang lớp 10–11: cân bằng hóa học, khúc xạ – giao thoa ánh sáng, quang hợp – hô hấp.
+- Chế độ "bài tập": ẩn số liệu, yêu cầu học sinh dự đoán trước khi bấm chạy.
+- Thêm ảnh/GIF minh họa vào README cho mỗi môn.
