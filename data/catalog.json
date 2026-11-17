@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-16T15:18:16.566Z",
-  "count": 48,
+  "generatedAt": "2026-11-17T10:38:51.420Z",
+  "count": 81,
   "subjects": [
     {
       "id": "chem",
@@ -53,6 +53,32 @@
               "params": [
                 "temp",
                 "sub"
+              ]
+            },
+            {
+              "id": "chem-soap-micelle",
+              "title": "Xà phòng và chất giặt rửa: cơ chế tẩy vết dầu mỡ",
+              "summary": "Phân tử xà phòng có đầu ưa nước và đuôi kị nước: đuôi cắm vào giọt dầu, đầu quay ra nước tạo micelle rồi bị nước cuốn đi. So sánh xà phòng với chất giặt rửa tổng hợp trong nước cứng.",
+              "equation": [
+                "Xà phòng: RCOO−Na+ (R dài ~ C15–C17) – đầu ưa nước COO−, đuôi kị nước R",
+                "Trong nước cứng: 2RCOO− + Ca2+ → (RCOO)2Ca↓ (mất tác dụng)",
+                "Chất giặt rửa tổng hợp: R–SO3−Na+ hoặc R–OSO3−Na+, không kết tủa với Ca2+, Mg2+"
+              ],
+              "keywords": [
+                "xà phòng",
+                "chất giặt rửa",
+                "micelle",
+                "ưa nước",
+                "kị nước",
+                "tẩy rửa",
+                "nước cứng",
+                "alkylbenzene sulfonate"
+              ],
+              "path": "chem/soap-micelle.js",
+              "params": [
+                "agent",
+                "hard",
+                "amount"
               ]
             }
           ]
@@ -130,6 +156,57 @@
                 "cat",
                 "temp"
               ]
+            },
+            {
+              "id": "chem-fermentation",
+              "title": "Lên men glucose thành ethanol",
+              "summary": "Nấm men chuyển glucose thành ethanol và CO2; khí CO2 dẫn vào nước vôi trong làm vẩn đục. Nhiệt độ và nồng độ ethanol ảnh hưởng tới tốc độ lên men.",
+              "equation": [
+                "C6H12O6 →(enzyme, 30–35 °C) 2C2H5OH + 2CO2↑",
+                "CO2 + Ca(OH)2 → CaCO3↓ (vẩn đục) + H2O",
+                "Tinh bột →(H+/enzyme) glucose → ethanol (sản xuất rượu, cồn sinh học)"
+              ],
+              "keywords": [
+                "lên men",
+                "ethanol",
+                "nấm men",
+                "CO2",
+                "nước vôi trong",
+                "glucose",
+                "enzyme",
+                "cồn sinh học"
+              ],
+              "path": "chem/fermentation.js",
+              "params": [
+                "temp",
+                "glucose",
+                "yeast"
+              ]
+            },
+            {
+              "id": "chem-cellulose",
+              "title": "Cellulose: tính chất và ứng dụng",
+              "summary": "Bông cellulose không tan trong nước nhưng tan trong nước Schweizer, tạo ester với HNO3 (cellulose trinitrate), thủy phân thành glucose trong acid. Xem mạch thẳng [C6H7O2(OH)3]n và liên kết hydrogen.",
+              "equation": [
+                "[C6H7O2(OH)3]n + 3nHNO3 →(H2SO4 đặc) [C6H7O2(ONO2)3]n + 3nH2O",
+                "(C6H10O5)n + nH2O →(H+, t°) nC6H12O6",
+                "Mỗi mắt xích có 3 nhóm –OH tự do"
+              ],
+              "keywords": [
+                "cellulose",
+                "nước Schweizer",
+                "cellulose trinitrate",
+                "tơ visco",
+                "thủy phân",
+                "bông",
+                "gỗ",
+                "giấy"
+              ],
+              "path": "chem/cellulose.js",
+              "params": [
+                "exp",
+                "temp"
+              ]
             }
           ]
         },
@@ -188,6 +265,33 @@
                 "n",
                 "field"
               ]
+            },
+            {
+              "id": "chem-protein-denaturation",
+              "title": "Protein: sự đông tụ (biến tính) và phản ứng màu",
+              "summary": "Lòng trắng trứng trong suốt đông tụ thành khối trắng đục khi đun, gặp acid, muối kim loại nặng hay ethanol: cấu trúc không gian bị phá vỡ. Thêm phản ứng màu với HNO3 (vàng) và Cu(OH)2 (tím).",
+              "equation": [
+                "Protein (cấu trúc bậc 2, 3, 4) →(t°, acid, base, Pb2+…) protein biến tính (mất cấu trúc không gian, đông tụ)",
+                "Protein + HNO3 đặc → kết tủa vàng (vòng benzene của Tyr, Phe)",
+                "Protein + Cu(OH)2 → phức màu tím (biuret)"
+              ],
+              "keywords": [
+                "protein",
+                "đông tụ",
+                "biến tính",
+                "lòng trắng trứng",
+                "albumin",
+                "phản ứng màu",
+                "xanthoprotein",
+                "biuret",
+                "enzyme"
+              ],
+              "path": "chem/protein-denaturation.js",
+              "params": [
+                "agent",
+                "temp",
+                "test"
+              ]
             }
           ]
         },
@@ -218,6 +322,35 @@
                 "mode",
                 "rate",
                 "count"
+              ]
+            },
+            {
+              "id": "chem-polymer-materials",
+              "title": "Vật liệu polymer: chất dẻo, cao su lưu hóa, tơ",
+              "summary": "Kéo giãn và nung từng vật liệu: cao su lưu hóa đàn hồi nhờ cầu nối disulfide, nhựa nhiệt dẻo mềm khi nóng, nhựa nhiệt rắn không chảy, tơ là sợi dài bền.",
+              "equation": [
+                "Lưu hóa: cao su + S (t°) → mạng lưới cầu –S–S– giữa các mạch",
+                "Nhiệt dẻo: mạch thẳng/nhánh, mềm khi nóng, tái chế được",
+                "Nhiệt rắn: mạng không gian, không nóng chảy, không tái chế"
+              ],
+              "keywords": [
+                "chất dẻo",
+                "cao su",
+                "lưu hóa",
+                "tơ",
+                "nhiệt dẻo",
+                "nhiệt rắn",
+                "PE",
+                "PVC",
+                "nylon",
+                "vật liệu polymer",
+                "composite"
+              ],
+              "path": "chem/polymer-materials.js",
+              "params": [
+                "mat",
+                "pull",
+                "temp"
               ]
             }
           ]
@@ -278,6 +411,32 @@
                 "I",
                 "scale"
               ]
+            },
+            {
+              "id": "chem-batteries",
+              "title": "Acquy chì và pin nhiên liệu hydrogen",
+              "summary": "Acquy chì phóng điện rồi được nạp lại (phản ứng thuận nghịch); pin nhiên liệu H2–O2 tạo điện liên tục khi được cấp khí, sản phẩm chỉ là nước.",
+              "equation": [
+                "Acquy chì phóng: Pb + PbO2 + 2H2SO4 → 2PbSO4 + 2H2O (E ≈ 2 V/ngăn) ; nạp: ngược lại",
+                "Pin nhiên liệu: anode 2H2 → 4H+ + 4e ; cathode O2 + 4H+ + 4e → 2H2O ; tổng 2H2 + O2 → 2H2O (E° = 1,23 V)"
+              ],
+              "keywords": [
+                "acquy",
+                "pin nhiên liệu",
+                "nạp điện",
+                "phóng điện",
+                "pin thứ cấp",
+                "pin sơ cấp",
+                "hydrogen",
+                "ô tô điện"
+              ],
+              "path": "chem/batteries.js",
+              "params": [
+                "type",
+                "mode",
+                "load",
+                "h2"
+              ]
             }
           ]
         },
@@ -310,6 +469,34 @@
               ]
             },
             {
+              "id": "chem-metallic-bond",
+              "title": "Liên kết kim loại, tính chất vật lí và hợp kim",
+              "summary": "Mạng tinh thể ion dương chìm trong \"biển electron\" tự do: nối nguồn điện thì electron chạy có hướng (dẫn điện), đập búa thì các lớp ion trượt mà không vỡ (dẻo). Thêm nguyên tử lạ tạo hợp kim cứng hơn, dẫn điện kém hơn.",
+              "equation": [
+                "Liên kết kim loại: lực hút tĩnh điện giữa ion dương ở nút mạng và electron hóa trị tự do",
+                "Dẫn điện: Ag > Cu > Au > Al > Fe",
+                "Hợp kim: thép (Fe–C), inox (Fe–Cr–Ni), đồng thau (Cu–Zn), duralumin (Al–Cu–Mg)"
+              ],
+              "keywords": [
+                "liên kết kim loại",
+                "electron tự do",
+                "mạng tinh thể",
+                "dẫn điện",
+                "dẫn nhiệt",
+                "ánh kim",
+                "tính dẻo",
+                "hợp kim",
+                "thép",
+                "inox"
+              ],
+              "path": "chem/metallic-bond.js",
+              "params": [
+                "field",
+                "temp",
+                "alloy"
+              ]
+            },
+            {
               "id": "chem-corrosion",
               "title": "Ăn mòn điện hóa và bảo vệ kim loại",
               "summary": "Cặp Fe–Cu trong dung dịch muối tạo pin điện hóa nhỏ làm sắt gỉ nhanh; gắn Zn (anode hi sinh) thì Zn bị ăn mòn thay cho sắt.",
@@ -332,6 +519,32 @@
                 "pair",
                 "salt",
                 "o2"
+              ]
+            },
+            {
+              "id": "chem-metal-extraction",
+              "title": "Điều chế kim loại: nhiệt luyện, thủy luyện, điện phân",
+              "summary": "Nguyên tắc chung là khử ion kim loại Mⁿ⁺ + ne → M. Chọn phương pháp theo vị trí trong dãy điện hóa: kim loại mạnh phải điện phân nóng chảy, trung bình nhiệt luyện, yếu thủy luyện.",
+              "equation": [
+                "Nguyên tắc: Mⁿ⁺ + ne → M (khử ion kim loại)",
+                "Nhiệt luyện: Fe2O3 + 3CO → 2Fe + 3CO2 ; CuO + H2 → Cu + H2O",
+                "Điện phân nóng chảy: 2Al2O3 → 4Al + 3O2 ; MgCl2 → Mg + Cl2"
+              ],
+              "keywords": [
+                "điều chế kim loại",
+                "nhiệt luyện",
+                "thủy luyện",
+                "điện phân nóng chảy",
+                "lò cao",
+                "cryolite",
+                "nhôm",
+                "quặng"
+              ],
+              "path": "chem/metal-extraction.js",
+              "params": [
+                "method",
+                "metal",
+                "temp"
               ]
             }
           ]
@@ -393,6 +606,33 @@
               ]
             },
             {
+              "id": "chem-carbonate-decomp",
+              "title": "Nhiệt phân muối carbonate, hydrogencarbonate",
+              "summary": "Nung các muối carbonate: NaHCO3 phân hủy từ 100 °C, MgCO3 ở 350 °C, CaCO3 ở 900 °C, Na2CO3 không phân hủy. CO2 sinh ra làm đục nước vôi trong.",
+              "equation": [
+                "2NaHCO3 →(t°) Na2CO3 + CO2 + H2O",
+                "CaCO3 →(t° ≈ 900 °C) CaO + CO2",
+                "CO2 + Ca(OH)2 → CaCO3↓ + H2O ; CaCO3 + CO2 + H2O → Ca(HCO3)2 (dư CO2, trong lại)"
+              ],
+              "keywords": [
+                "nhiệt phân",
+                "carbonate",
+                "hydrogencarbonate",
+                "nung vôi",
+                "CaCO3",
+                "NaHCO3",
+                "độ bền nhiệt",
+                "nước vôi trong",
+                "bột nở"
+              ],
+              "path": "chem/carbonate-decomp.js",
+              "params": [
+                "salt",
+                "temp",
+                "mass"
+              ]
+            },
+            {
               "id": "chem-flame-test",
               "title": "Màu ngọn lửa của kim loại nhóm IA, IIA",
               "summary": "Đưa muối kim loại vào ngọn lửa: electron bị kích thích lên mức cao rồi rơi xuống phát ra photon có màu đặc trưng. Ứng dụng trong pháo hoa và nhận biết ion.",
@@ -443,6 +683,33 @@
                 "exp",
                 "drops"
               ]
+            },
+            {
+              "id": "chem-kmno4-titration",
+              "title": "Chuẩn độ xác định hàm lượng Fe2+ bằng dung dịch KMnO4",
+              "summary": "Nhỏ từ từ KMnO4 tím vào bình Fe2+ trong H2SO4: màu tím mất ngay vì MnO4− bị khử thành Mn2+ gần như không màu. Điểm tương đương là khi xuất hiện màu hồng nhạt bền 20 giây; từ thể tích KMnO4 tính nồng độ Fe2+.",
+              "equation": [
+                "MnO4− + 5Fe2+ + 8H+ → Mn2+ + 5Fe3+ + 4H2O",
+                "Tại điểm tương đương: n(Fe2+) = 5·n(MnO4−) ⇒ C(Fe2+)·V(Fe2+) = 5·C(KMnO4)·V(KMnO4)"
+              ],
+              "keywords": [
+                "chuẩn độ",
+                "KMnO4",
+                "thuốc tím",
+                "Fe2+",
+                "oxi hóa khử",
+                "điểm tương đương",
+                "burette",
+                "thực hành",
+                "muối Mohr"
+              ],
+              "path": "chem/kmno4-titration.js",
+              "params": [
+                "cFe",
+                "cMn",
+                "step",
+                "acid"
+              ]
             }
           ]
         }
@@ -478,6 +745,31 @@
               "params": [
                 "temp",
                 "state"
+              ]
+            },
+            {
+              "id": "physics-temperature-scales",
+              "title": "Nhiệt độ, thang Celsius – Kelvin và nhiệt kế",
+              "summary": "Kéo nhiệt độ để xem cùng một trạng thái trên ba thang Celsius, Kelvin, Fahrenheit; nhiệt kế chất lỏng dâng lên vì chất lỏng nở vì nhiệt. Mốc 0 K là độ không tuyệt đối.",
+              "equation": [
+                "T (K) = t (°C) + 273,15",
+                "t (°F) = 1,8·t (°C) + 32",
+                "ΔT (K) = Δt (°C): 1 K = 1 °C về độ lớn"
+              ],
+              "keywords": [
+                "nhiệt độ",
+                "Celsius",
+                "Kelvin",
+                "Fahrenheit",
+                "nhiệt kế",
+                "độ không tuyệt đối",
+                "thang nhiệt độ",
+                "cân bằng nhiệt"
+              ],
+              "path": "physics/temperature-scales.js",
+              "params": [
+                "t",
+                "fluid"
               ]
             },
             {
@@ -546,6 +838,83 @@
                 "T1",
                 "m2",
                 "T2"
+              ]
+            },
+            {
+              "id": "physics-specific-heat-lab",
+              "title": "Thí nghiệm đo nhiệt dung riêng bằng biến thế nguồn và joulemeter",
+              "summary": "Đun chất lỏng bằng dây điện trở, đo điện năng cung cấp và nhiệt độ theo thời gian, vẽ đồ thị T–t rồi tính c = P/(m·hệ số góc). Có sai số ngẫu nhiên và hao phí nhiệt như phòng thí nghiệm thật.",
+              "equation": [
+                "Q = U·I·t = m·c·ΔT",
+                "c = U·I / (m · ΔT/Δt)  (ΔT/Δt: hệ số góc đồ thị)",
+                "Sai số tương đối: δc/c = δP/P + δm/m + δk/k"
+              ],
+              "keywords": [
+                "nhiệt dung riêng",
+                "thí nghiệm",
+                "joulemeter",
+                "điện trở đun",
+                "sai số",
+                "đồ thị nhiệt độ thời gian",
+                "thực hành"
+              ],
+              "path": "physics/specific-heat-lab.js",
+              "params": [
+                "liq",
+                "m",
+                "U",
+                "insul"
+              ]
+            },
+            {
+              "id": "physics-latent-heat-lab",
+              "title": "Thực hành đo nhiệt hóa hơi riêng và nhiệt nóng chảy riêng",
+              "summary": "Đun nước đang sôi trên cân điện tử bằng dây điện trở nối joulemeter: khối lượng nước giảm đều. Từ độ dốc đồ thị khối lượng theo năng lượng tính L = ΔQ/Δm. Chế độ thứ hai: đun nước đá ở 0 °C để đo λ.",
+              "equation": [
+                "Hóa hơi: Q = L·m ⇒ L = ΔQ / Δm",
+                "Nóng chảy: Q = λ·m ⇒ λ = ΔQ / Δm",
+                "Giá trị chuẩn: L(nước) = 2,26·10⁶ J/kg ; λ(nước đá) = 3,34·10⁵ J/kg"
+              ],
+              "keywords": [
+                "nhiệt hóa hơi riêng",
+                "nhiệt nóng chảy riêng",
+                "thực hành",
+                "joulemeter",
+                "cân điện tử",
+                "sôi",
+                "nóng chảy",
+                "sai số"
+              ],
+              "path": "physics/latent-heat-lab.js",
+              "params": [
+                "mode",
+                "P",
+                "correct"
+              ]
+            },
+            {
+              "id": "physics-first-law",
+              "title": "Nội năng và định luật I nhiệt động lực học",
+              "summary": "Nội năng của khí thay đổi khi nhận nhiệt Q hoặc nhận công A: ΔU = A + Q. Nén pit-tông nhanh thì khí nóng lên, đun nóng thì khí giãn ra đẩy pit-tông và sinh công.",
+              "equation": [
+                "ΔU = A + Q",
+                "Quy ước: Q > 0 vật nhận nhiệt ; A > 0 vật nhận công ; Q < 0, A < 0: vật truyền nhiệt, sinh công",
+                "Khí lí tưởng: U chỉ phụ thuộc T ; công khi áp suất không đổi |A| = p·|ΔV|"
+              ],
+              "keywords": [
+                "nội năng",
+                "định luật I",
+                "nhiệt động lực học",
+                "công",
+                "nhiệt lượng",
+                "ΔU = A + Q",
+                "nén khí",
+                "động cơ nhiệt"
+              ],
+              "path": "physics/first-law.js",
+              "params": [
+                "proc",
+                "rate"
               ]
             }
           ]
@@ -681,6 +1050,32 @@
               ]
             },
             {
+              "id": "physics-current-balance",
+              "title": "Thực hành đo cảm ứng từ bằng \"cân dòng điện\"",
+              "summary": "Khung dây treo dưới đòn cân, cạnh đáy nằm trong khe nam châm. Cho dòng điện qua, lực từ kéo đáy khung xuống; đọc số chỉ cân, vẽ đồ thị F theo I và tính B từ hệ số góc: B = k/(N·L).",
+              "equation": [
+                "F = N·B·I·L  (cạnh đáy vuông góc với B)",
+                "F = Δm·g (độ thay đổi số chỉ cân)",
+                "Đồ thị F – I là đường thẳng qua gốc, hệ số góc k = N·B·L ⇒ B = k/(N·L)"
+              ],
+              "keywords": [
+                "cân dòng điện",
+                "cảm ứng từ",
+                "lực từ",
+                "thực hành",
+                "đo B",
+                "khung dây",
+                "nam châm chữ U",
+                "đồ thị"
+              ],
+              "path": "physics/current-balance.js",
+              "params": [
+                "I",
+                "N",
+                "Btrue"
+              ]
+            },
+            {
               "id": "physics-faraday-induction",
               "title": "Cảm ứng điện từ: nam châm chuyển động qua ống dây",
               "summary": "Đưa nam châm vào/ra ống dây: từ thông biến thiên sinh ra suất điện động cảm ứng, điện kế lệch. Nam châm đứng yên thì không có dòng. Định luật Faraday và Lenz.",
@@ -730,6 +1125,60 @@
                 "B",
                 "S"
               ]
+            },
+            {
+              "id": "physics-transformer",
+              "title": "Máy biến áp và truyền tải điện năng đi xa",
+              "summary": "Đổi số vòng cuộn sơ cấp/thứ cấp để tăng hoặc hạ áp; truyền tải 1 MW qua đường dây dài với điện áp khác nhau để thấy hao phí giảm theo bình phương điện áp.",
+              "equation": [
+                "U2 / U1 = N2 / N1  (máy biến áp lí tưởng)",
+                "I2 / I1 = N1 / N2 ;  P1 ≈ P2",
+                "Hao phí trên dây: ΔP = P²·R / U²  → tăng U lên n lần, hao phí giảm n² lần"
+              ],
+              "keywords": [
+                "máy biến áp",
+                "sơ cấp",
+                "thứ cấp",
+                "tăng áp",
+                "hạ áp",
+                "truyền tải điện",
+                "hao phí",
+                "cảm ứng điện từ",
+                "dòng điện xoay chiều"
+              ],
+              "path": "physics/transformer.js",
+              "params": [
+                "N1",
+                "N2",
+                "U1",
+                "ac",
+                "Uline"
+              ]
+            },
+            {
+              "id": "physics-em-wave",
+              "title": "Điện từ trường và sóng điện từ",
+              "summary": "Điện trường và từ trường dao động vuông góc với nhau và với phương truyền, lan đi với tốc độ c. Kéo tần số để đi dọc thang sóng điện từ từ vô tuyến tới tia γ.",
+              "equation": [
+                "c = λ·f = 3·10⁸ m/s (trong chân không)",
+                "E ⊥ B ⊥ v ; E và B dao động cùng pha",
+                "Năng lượng photon ε = h·f"
+              ],
+              "keywords": [
+                "sóng điện từ",
+                "điện từ trường",
+                "Maxwell",
+                "thang sóng điện từ",
+                "bước sóng",
+                "tần số",
+                "sóng vô tuyến",
+                "tia X"
+              ],
+              "path": "physics/em-wave.js",
+              "params": [
+                "logf",
+                "speed"
+              ]
             }
           ]
         },
@@ -761,6 +1210,33 @@
                 "iso",
                 "N0",
                 "rate"
+              ]
+            },
+            {
+              "id": "physics-radiation-types",
+              "title": "Các loại tia phóng xạ: khả năng đâm xuyên và lệch trong từ trường",
+              "summary": "Bắn tia α, β⁻, β⁺, γ qua từ trường và vật cản: α lệch ít và bị tờ giấy chặn, β lệch mạnh theo hai chiều ngược nhau và bị nhôm chặn, γ không lệch và xuyên qua nhôm.",
+              "equation": [
+                "α: ᴬ_Z X → ᴬ⁻⁴_{Z−2} Y + ⁴₂He",
+                "β⁻: n → p + e⁻ + ν̄ ;  β⁺: p → n + e⁺ + ν",
+                "γ: hạt nhân ở trạng thái kích thích → trạng thái cơ bản + photon"
+              ],
+              "keywords": [
+                "tia phóng xạ",
+                "alpha",
+                "beta",
+                "gamma",
+                "positron",
+                "đâm xuyên",
+                "ion hóa",
+                "lệch trong từ trường",
+                "an toàn phóng xạ"
+              ],
+              "path": "physics/radiation-types.js",
+              "params": [
+                "B",
+                "barrier",
+                "show"
               ]
             },
             {
@@ -989,6 +1465,30 @@
               ]
             },
             {
+              "id": "bio-recombinant-dna",
+              "title": "Công nghệ gene: tạo DNA tái tổ hợp sản xuất insulin",
+              "summary": "Từng bước cắt gene insulin người và plasmid bằng cùng một enzyme giới hạn, nối bằng ligase, biến nạp vào E. coli, chọn dòng bằng kháng sinh rồi để vi khuẩn sản xuất insulin.",
+              "equation": [
+                "Gene cần chuyển + thể truyền (plasmid) →(restrictase, ligase) DNA tái tổ hợp",
+                "DNA tái tổ hợp → tế bào nhận → chọn dòng → sinh vật biến đổi gene"
+              ],
+              "keywords": [
+                "công nghệ gene",
+                "DNA tái tổ hợp",
+                "plasmid",
+                "enzyme cắt giới hạn",
+                "ligase",
+                "E. coli",
+                "insulin",
+                "sinh vật biến đổi gene",
+                "GMO"
+              ],
+              "path": "bio/recombinant-dna.js",
+              "params": [
+                "auto"
+              ]
+            },
+            {
               "id": "bio-gene-mutation",
               "title": "Đột biến gene và hậu quả lên protein",
               "summary": "Thay thế, thêm hoặc mất một nucleotide trên gene rồi dịch mã lại: đột biến đồng nghĩa, sai nghĩa, vô nghĩa hay dịch khung – thấy ngay chuỗi amino acid thay đổi thế nào.",
@@ -1046,6 +1546,30 @@
                 "mode",
                 "n",
                 "speed"
+              ]
+            },
+            {
+              "id": "bio-chromosome-structure",
+              "title": "Cấu trúc siêu hiển vi của nhiễm sắc thể",
+              "summary": "Phóng to từng mức đóng gói: DNA 2 nm quấn quanh histone tạo nucleosome, xoắn thành sợi 11 nm, 30 nm, 300 nm rồi chromatid 700 nm. Xem thêm tâm động, đầu mút và vùng khởi đầu nhân đôi.",
+              "equation": [
+                "DNA (2 nm) → sợi cơ bản (11 nm) → sợi nhiễm sắc (30 nm) → vùng xếp cuộn (300 nm) → chromatid (700 nm)",
+                "Nucleosome = 8 histone + ~146 cặp nucleotide quấn 1¾ vòng"
+              ],
+              "keywords": [
+                "cấu trúc NST",
+                "nucleosome",
+                "histone",
+                "sợi cơ bản",
+                "sợi chất nhiễm sắc",
+                "chromatid",
+                "tâm động",
+                "đầu mút",
+                "telomere"
+              ],
+              "path": "bio/chromosome-structure.js",
+              "params": [
+                "level"
               ]
             },
             {
@@ -1162,6 +1686,106 @@
                 "dad",
                 "disease"
               ]
+            },
+            {
+              "id": "bio-gene-interaction",
+              "title": "Tương tác gene: bổ sung, át chế, cộng gộp",
+              "summary": "Hai cặp gene phân li độc lập cùng quy định một tính trạng: F2 không còn 9 : 3 : 3 : 1 mà biến thành 9 : 7, 9 : 6 : 1, 12 : 3 : 1 hay 15 : 1. Xem bảng 16 ô được tô theo kiểu hình.",
+              "equation": [
+                "P: AABB × aabb → F1: AaBb → F2: 9 A_B_ : 3 A_bb : 3 aaB_ : 1 aabb",
+                "Bổ sung: 9:7, 9:6:1, 9:3:3:1 ; Át chế: 12:3:1, 13:3 ; Cộng gộp: 15:1, 1:4:6:4:1"
+              ],
+              "keywords": [
+                "tương tác gene",
+                "bổ sung",
+                "át chế",
+                "cộng gộp",
+                "9:7",
+                "15:1",
+                "12:3:1",
+                "tính trạng số lượng",
+                "gene đa hiệu"
+              ],
+              "path": "bio/gene-interaction.js",
+              "params": [
+                "mode"
+              ]
+            },
+            {
+              "id": "bio-extranuclear",
+              "title": "Di truyền ngoài nhân (di truyền theo dòng mẹ)",
+              "summary": "Lai thuận nghịch cây hoa phấn lá đốm của Correns: kiểu hình đời con luôn giống cây mẹ vì gene trong lục lạp/ti thể nằm ở tế bào chất của trứng, tinh trùng/hạt phấn hầu như không góp tế bào chất.",
+              "equation": [
+                "Lai thuận: ♀ lá xanh × ♂ lá đốm → F1 100% lá xanh",
+                "Lai nghịch: ♀ lá đốm × ♂ lá xanh → F1 lá đốm (hoặc trắng/xanh tùy lục lạp nhận được)",
+                "Kết quả lai thuận ≠ lai nghịch → gene ngoài nhân"
+              ],
+              "keywords": [
+                "di truyền ngoài nhân",
+                "di truyền tế bào chất",
+                "theo dòng mẹ",
+                "lai thuận nghịch",
+                "lục lạp",
+                "ti thể",
+                "Correns",
+                "hoa phấn"
+              ],
+              "path": "bio/extranuclear.js",
+              "params": [
+                "mom",
+                "dad"
+              ]
+            },
+            {
+              "id": "bio-reaction-norm",
+              "title": "Kiểu gene – môi trường – kiểu hình: thường biến và mức phản ứng",
+              "summary": "Cùng kiểu gene, thỏ Himalaya có lông đen ở đầu mút cơ thể vì nơi đó lạnh; cây hoa cẩm tú cầu đổi màu theo pH đất. Năng suất lúa của hai giống thay đổi theo chăm sóc nhưng trong giới hạn mức phản ứng.",
+              "equation": [
+                "Kiểu hình = Kiểu gene + Môi trường",
+                "Mức phản ứng: tập hợp các kiểu hình của một kiểu gene trong các môi trường khác nhau (do kiểu gene quy định)"
+              ],
+              "keywords": [
+                "thường biến",
+                "mức phản ứng",
+                "mềm dẻo kiểu hình",
+                "thỏ Himalaya",
+                "cẩm tú cầu",
+                "kiểu gene",
+                "môi trường",
+                "giống tốt kĩ thuật tốt"
+              ],
+              "path": "bio/reaction-norm.js",
+              "params": [
+                "temp",
+                "shave",
+                "ph",
+                "care"
+              ]
+            },
+            {
+              "id": "bio-pedigree",
+              "title": "Phân tích phả hệ và di truyền học người",
+              "summary": "Đọc sơ đồ phả hệ 3 thế hệ cho bệnh bạch tạng (lặn NST thường), tật ngón ngắn (trội) và máu khó đông (lặn trên X). Bật \"hiện kiểu gene\" để kiểm tra suy luận và tính xác suất con cặp vợ chồng thế hệ II bị bệnh.",
+              "equation": [
+                "Kí hiệu: □ nam, ○ nữ, tô đen: bị bệnh, chấm giữa: mang gene",
+                "Bố mẹ bình thường sinh con bệnh → bệnh do gene lặn",
+                "Gene lặn trên X: con trai bệnh nhận Xᵃ từ mẹ"
+              ],
+              "keywords": [
+                "phả hệ",
+                "di truyền người",
+                "bạch tạng",
+                "máu khó đông",
+                "gene trội",
+                "gene lặn",
+                "tư vấn di truyền",
+                "xác suất"
+              ],
+              "path": "bio/pedigree.js",
+              "params": [
+                "mode",
+                "show"
+              ]
             }
           ]
         },
@@ -1194,6 +1818,33 @@
                 "aa",
                 "mating",
                 "sel"
+              ]
+            },
+            {
+              "id": "bio-gene-flow",
+              "title": "Các nhân tố làm thay đổi vốn gene: di – nhập gene, đột biến, giao phối không ngẫu nhiên",
+              "summary": "Hai quần thể đất liền và đảo có tần số allele khác nhau. Bật dòng di cư để thấy tần số đảo tiến dần về đất liền; thêm đột biến hoặc giao phối gần để so sánh tác động lên tần số allele và tỉ lệ dị hợp.",
+              "equation": [
+                "Di – nhập gene: p' = (1 − m)·p + m·P  (m: tỉ lệ cá thể nhập cư mỗi thế hệ)",
+                "Đột biến A → a với tốc độ u: p' = p·(1 − u)",
+                "Giao phối gần: tần số allele không đổi, dị hợp giảm, đồng hợp tăng"
+              ],
+              "keywords": [
+                "di nhập gene",
+                "dòng gene",
+                "đột biến",
+                "giao phối không ngẫu nhiên",
+                "giao phối gần",
+                "nhân tố tiến hóa",
+                "vốn gene",
+                "tần số allele"
+              ],
+              "path": "bio/gene-flow.js",
+              "params": [
+                "m",
+                "u",
+                "F",
+                "speed"
               ]
             }
           ]
@@ -1229,6 +1880,56 @@
               ]
             },
             {
+              "id": "bio-evolution-evidence",
+              "title": "Bằng chứng tiến hóa: giải phẫu so sánh và sinh học phân tử",
+              "summary": "Xương chi trước của người, mèo, cá voi, dơi cùng một kế hoạch cấu tạo (cơ quan tương đồng) nhưng thích nghi với chức năng khác nhau; so sánh trình tự protein cho thấy loài càng gần nhau càng ít khác biệt.",
+              "equation": [
+                "Cơ quan tương đồng: cùng nguồn gốc, khác chức năng → tiến hóa phân li",
+                "Cơ quan tương tự: khác nguồn gốc, cùng chức năng → tiến hóa đồng quy",
+                "Càng ít sai khác trình tự DNA/protein → quan hệ họ hàng càng gần"
+              ],
+              "keywords": [
+                "bằng chứng tiến hóa",
+                "cơ quan tương đồng",
+                "cơ quan tương tự",
+                "cơ quan thoái hóa",
+                "giải phẫu so sánh",
+                "sinh học phân tử",
+                "hóa thạch",
+                "tế bào học"
+              ],
+              "path": "bio/evolution-evidence.js",
+              "params": [
+                "view"
+              ]
+            },
+            {
+              "id": "bio-speciation",
+              "title": "Hình thành loài khác khu vực địa lí (cách li địa lí)",
+              "summary": "Một quần thể bị chia đôi bởi sông/núi. Hai bên có môi trường khác nhau nên chọn lọc tự nhiên, đột biến và phiêu bạt làm vốn gene phân hóa dần; khi đủ khác biệt, chúng cách li sinh sản và trở thành hai loài.",
+              "equation": [
+                "Cách li địa lí → ngăn trao đổi gene → phân hóa vốn gene (CLTN, đột biến, phiêu bạt)",
+                "→ cách li sinh sản → loài mới",
+                "Tiêu chuẩn loài sinh học: cách li sinh sản với loài khác"
+              ],
+              "keywords": [
+                "hình thành loài",
+                "cách li địa lí",
+                "cách li sinh sản",
+                "loài sinh học",
+                "vốn gene",
+                "phân hóa",
+                "tiến hóa nhỏ",
+                "quần đảo Galápagos"
+              ],
+              "path": "bio/speciation.js",
+              "params": [
+                "barrier",
+                "diff",
+                "speed"
+              ]
+            },
+            {
               "id": "bio-genetic-drift",
               "title": "Phiêu bạt di truyền (trôi dạt gene) và hiệu ứng cổ chai",
               "summary": "Ở quần thể nhỏ, tần số allele thay đổi ngẫu nhiên qua mỗi thế hệ và có thể bị cố định hoặc mất hẳn dù không có chọn lọc. So sánh 5 quần thể cùng xuất phát.",
@@ -1249,6 +1950,30 @@
               "params": [
                 "N",
                 "p0",
+                "speed"
+              ]
+            },
+            {
+              "id": "bio-miller-urey",
+              "title": "Phát sinh sự sống: thí nghiệm Miller – Urey (tiến hóa hóa học)",
+              "summary": "Mô phỏng khí quyển nguyên thủy CH4, NH3, H2, hơi nước trong bình kín, phóng tia lửa điện và làm lạnh tuần hoàn: sau vài ngày nước chuyển nâu vì có amino acid và các chất hữu cơ đơn giản.",
+              "equation": [
+                "CH4 + NH3 + H2 + H2O →(tia lửa điện, tuần hoàn) amino acid (glycine, alanine…) + chất hữu cơ khác",
+                "Tiến hóa hóa học → tiền sinh học → tiến hóa sinh học"
+              ],
+              "keywords": [
+                "Miller Urey",
+                "phát sinh sự sống",
+                "tiến hóa hóa học",
+                "khí quyển nguyên thủy",
+                "amino acid",
+                "tiến hóa tiền sinh học",
+                "tế bào sơ khai"
+              ],
+              "path": "bio/miller-urey.js",
+              "params": [
+                "spark",
+                "o2",
                 "speed"
               ]
             }
@@ -1287,6 +2012,32 @@
               ]
             },
             {
+              "id": "bio-population-traits",
+              "title": "Đặc trưng cơ bản của quần thể: mật độ, phân bố, cấu trúc tuổi, tỉ lệ giới tính",
+              "summary": "Đặt cá thể vào ô quan sát để xem ba kiểu phân bố (theo nhóm, đồng đều, ngẫu nhiên), tính mật độ, và đọc tháp tuổi của quần thể đang phát triển, ổn định hay suy thoái.",
+              "equation": [
+                "Mật độ = số cá thể / diện tích (hoặc thể tích)",
+                "Tháp tuổi: trước sinh sản – đang sinh sản – sau sinh sản",
+                "Phân bố: theo nhóm (phổ biến nhất), đồng đều (cạnh tranh gay gắt), ngẫu nhiên (môi trường đồng nhất)"
+              ],
+              "keywords": [
+                "đặc trưng quần thể",
+                "mật độ",
+                "kiểu phân bố",
+                "tháp tuổi",
+                "cấu trúc tuổi",
+                "tỉ lệ giới tính",
+                "kích thước quần thể"
+              ],
+              "path": "bio/population-traits.js",
+              "params": [
+                "dist",
+                "N",
+                "age",
+                "sex"
+              ]
+            },
+            {
               "id": "bio-predator-prey",
               "title": "Quan hệ vật ăn thịt – con mồi (thỏ và cáo)",
               "summary": "Số lượng con mồi tăng → vật ăn thịt tăng theo → con mồi giảm → vật ăn thịt giảm: hai quần thể dao động lệch pha, khống chế sinh học lẫn nhau (mô hình Lotka–Volterra).",
@@ -1314,6 +2065,32 @@
               ]
             },
             {
+              "id": "bio-species-interactions",
+              "title": "Quan hệ giữa các loài trong quần xã",
+              "summary": "Nuôi riêng rồi nuôi chung hai loài để xem số lượng thay đổi thế nào: cạnh tranh loại trừ (Gause), cộng sinh, hội sinh, kí sinh, ức chế – cảm nhiễm. Mỗi quan hệ có một cặp dấu (+, −, 0) đặc trưng.",
+              "equation": [
+                "dN1/dt = r1·N1·(K1 − N1 + α12·N2)/K1",
+                "dN2/dt = r2·N2·(K2 − N2 + α21·N1)/K2",
+                "α > 0: được lợi ; α < 0: bị hại ; α = 0: không ảnh hưởng"
+              ],
+              "keywords": [
+                "quan hệ khác loài",
+                "cạnh tranh",
+                "cộng sinh",
+                "hội sinh",
+                "kí sinh",
+                "ức chế cảm nhiễm",
+                "Gause",
+                "loại trừ cạnh tranh",
+                "quần xã"
+              ],
+              "path": "bio/species-interactions.js",
+              "params": [
+                "rel",
+                "together"
+              ]
+            },
+            {
               "id": "bio-food-web",
               "title": "Chuỗi, lưới thức ăn và tháp năng lượng",
               "summary": "Chọn một sinh vật để tô sáng các chuỗi thức ăn đi qua nó; xem năng lượng giảm khoảng 90% qua mỗi bậc dinh dưỡng (quy luật 10%) và tác động khi một loài biến mất.",
@@ -1336,6 +2113,82 @@
                 "focus",
                 "remove",
                 "E1"
+              ]
+            },
+            {
+              "id": "bio-succession",
+              "title": "Diễn thế sinh thái nguyên sinh và thứ sinh",
+              "summary": "Quần xã thay đổi tuần tự theo thời gian: từ đá trần (nguyên sinh) hoặc đất bỏ hoang (thứ sinh) tới rừng ổn định. Đất dày lên, độ đa dạng và sinh khối tăng; tác động của con người có thể làm diễn thế đi ngược.",
+              "equation": [
+                "Diễn thế nguyên sinh: môi trường trống trơn → quần xã tiên phong → … → quần xã đỉnh cực",
+                "Diễn thế thứ sinh: quần xã bị phá hủy → … → quần xã ổn định hoặc suy thoái"
+              ],
+              "keywords": [
+                "diễn thế sinh thái",
+                "nguyên sinh",
+                "thứ sinh",
+                "quần xã đỉnh cực",
+                "sinh vật tiên phong",
+                "địa y",
+                "đa dạng sinh học",
+                "rừng thứ sinh"
+              ],
+              "path": "bio/succession.js",
+              "params": [
+                "type",
+                "speed"
+              ]
+            },
+            {
+              "id": "bio-carbon-cycle",
+              "title": "Chu trình carbon và hiệu ứng nhà kính",
+              "summary": "Carbon đi vòng giữa khí quyển, sinh vật, đại dương và nhiên liệu hóa thạch qua quang hợp, hô hấp, phân giải và đốt cháy. Tăng đốt nhiên liệu hay phá rừng để thấy CO2 khí quyển tăng.",
+              "equation": [
+                "Quang hợp: 6CO2 + 6H2O →(ánh sáng) C6H12O6 + 6O2",
+                "Hô hấp / phân giải: C6H12O6 + 6O2 → 6CO2 + 6H2O",
+                "Đốt cháy nhiên liệu hóa thạch: C + O2 → CO2"
+              ],
+              "keywords": [
+                "chu trình carbon",
+                "chu trình sinh địa hóa",
+                "quang hợp",
+                "hô hấp",
+                "CO2",
+                "hiệu ứng nhà kính",
+                "nhiên liệu hóa thạch",
+                "biến đổi khí hậu",
+                "phá rừng"
+              ],
+              "path": "bio/carbon-cycle.js",
+              "params": [
+                "fossil",
+                "forest",
+                "speed"
+              ]
+            },
+            {
+              "id": "bio-tolerance-limits",
+              "title": "Giới hạn sinh thái và ổ sinh thái",
+              "summary": "Mỗi loài chỉ tồn tại trong một khoảng giá trị của nhân tố sinh thái: khoảng thuận lợi ở giữa, khoảng chống chịu hai bên, ngoài giới hạn thì chết. Kéo nhiệt độ để xem đàn cá rô phi phản ứng.",
+              "equation": [
+                "Giới hạn sinh thái: khoảng từ điểm gây chết dưới đến điểm gây chết trên",
+                "Cá rô phi: 5,6 °C – 42 °C ; khoảng thuận lợi 20 – 35 °C",
+                "Ổ sinh thái: tổ hợp các giới hạn sinh thái của mọi nhân tố"
+              ],
+              "keywords": [
+                "giới hạn sinh thái",
+                "khoảng thuận lợi",
+                "khoảng chống chịu",
+                "điểm gây chết",
+                "ổ sinh thái",
+                "nhân tố sinh thái",
+                "cá rô phi",
+                "nhiệt độ"
+              ],
+              "path": "bio/tolerance-limits.js",
+              "params": [
+                "sp",
+                "x"
               ]
             }
           ]

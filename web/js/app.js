@@ -3,7 +3,13 @@ import { loadAllSims } from './core/registry.js';
 import { Runner, defaultParams } from './core/engine.js';
 import { el, buildControls, buildActions, renderMetrics, md, chem } from './core/ui.js';
 
-const state = { curriculum: null, sims: [], runner: null, ready: false };
+const state = { curriculum: null, sims: [], runner: null, ready: false, api: false };
+
+// Có server Node (Render Web Service / chạy local) thì bật góp ý + thống kê; bản tĩnh thì tự tắt.
+const apiReady = fetch('/api/health', { cache: 'no-store' })
+  .then((r) => (r.ok ? r.json() : null))
+  .then((j) => { state.api = !!(j && j.ok); })
+  .catch(() => { state.api = false; });
 const app = document.getElementById('app');
 
 async function boot() {
@@ -13,6 +19,7 @@ async function boot() {
   ]);
   state.curriculum = cur;
   state.sims = sims;
+  await apiReady;
   state.ready = true;
   window.addEventListener('hashchange', route);
   route();
@@ -149,7 +156,7 @@ function renderSim(id) {
     sim.exam ? el('div', { class: 'exam' }, el('h3', {}, 'Liên hệ bài thi'), el('ul', {}, ...sim.exam.map((t) => el('li', { html: chemMd(t) })))) : null
   );
 
-  const feedback = el('details', { class: 'feedback' },
+  const feedback = !state.api ? null : el('details', { class: 'feedback' },
     el('summary', {}, 'Góp ý cho bài này'),
     el('form', { onsubmit: sendFeedback(sim.id) },
       el('select', { name: 'rating' }, el('option', { value: '5' }, '★★★★★ Rất dễ hiểu'), el('option', { value: '4' }, '★★★★ Tốt'), el('option', { value: '3' }, '★★★ Bình thường'), el('option', { value: '2' }, '★★ Khó hiểu'), el('option', { value: '1' }, '★ Sai / lỗi')),
@@ -165,7 +172,7 @@ function renderSim(id) {
     el('p', { class: 'lead' }, sim.summary || ''),
     el('div', { class: 'sim-layout' }, el('div', { class: 'stage-wrap', style: `--c:${sub.color}` }, canvas), panel),
     theory,
-    feedback,
+    ...(feedback ? [feedback] : []),
     el('nav', { class: 'pager' },
       prev ? el('a', { href: '#/sim/' + prev.id }, '← ' + prev.title) : el('span'),
       next ? el('a', { href: '#/sim/' + next.id }, next.title + ' →') : el('span'))
@@ -173,7 +180,7 @@ function renderSim(id) {
 
   const runner = new Runner(canvas, sim, params);
   state.runner = runner;
-  fetch('/api/view', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sim: sim.id }) }).catch(() => {});
+  if (state.api) fetch('/api/view', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sim: sim.id }) }).catch(() => {});
   document.getElementById('actions').replaceWith(buildActions(sim, runner));
   let acc = 0;
   runner.onFrame((r) => {

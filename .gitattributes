@@ -1,0 +1,8 @@
+# Chuẩn hóa xuống dòng LF trong repo (hết cảnh báo CRLF trên Windows)
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+
+# Bản Streamlit cũ chỉ để tham chiếu: không tính vào thống kê ngôn ngữ của GitHub
+old/** linguist-documentation
+data/catalog.json linguist-generated

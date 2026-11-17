@@ -9,11 +9,8 @@ services:
     envVars:
       - key: NODE_VERSION
         value: "20"
-      # Điền trong Render Dashboard (Environment) – lấy từ Upstash Redis > REST API
-      - key: UPSTASH_REDIS_REST_URL
-        sync: false
-      - key: UPSTASH_REDIS_REST_TOKEN
-        sync: false
-      # Khóa để xem phản hồi tại /api/feedback?key=...
+      # Khóa xem phản hồi tại /api/feedback?key=... (Render tự sinh, xem trong tab Environment)
       - key: ADMIN_KEY
-        sync: false
+        generateValue: true
+      # Upstash là tùy chọn: thêm UPSTASH_REDIS_REST_URL và UPSTASH_REDIS_REST_TOKEN nếu muốn
+      # phản hồi/thống kê không mất khi Render khởi động lại. Không có thì lưu file tạm trong var/.

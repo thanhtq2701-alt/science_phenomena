@@ -8,7 +8,8 @@
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
     "test": "node --test tests/",
-    "catalog": "node tools/build-catalog.js"
+    "catalog": "node tools/build-catalog.js",
+    "build": "npm run catalog && node tools/build-static.js"
   },
   "engines": {
     "node": ">=18"

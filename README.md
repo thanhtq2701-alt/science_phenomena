@@ -1,52 +1,68 @@
 # 🔬 Science Phenomenons 12 – Phòng thí nghiệm ảo Hóa · Lí · Sinh
 
-Web mô phỏng tương tác cho học sinh lớp 12 (Chương trình GDPT 2018): phản ứng Hóa học, thí nghiệm Vật lí và hình động Sinh học. JavaScript thuần + Canvas, phục vụ bằng Express, không cần bước build.
+[![CI](https://github.com/thanhtq2701-alt/science_phenomenons/actions/workflows/ci.yml/badge.svg)](https://github.com/thanhtq2701-alt/science_phenomenons/actions/workflows/ci.yml)
+![Mô phỏng](https://img.shields.io/badge/m%C3%B4%20ph%E1%BB%8Fng-81-4ade80)
+![Node](https://img.shields.io/badge/node-%E2%89%A518-339933?logo=node.js&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-Canvas-f7df1e?logo=javascript&logoColor=black)
 
-## Chạy trên máy
+**81 mô phỏng tương tác** cho học sinh lớp 12 theo Chương trình GDPT 2018: phản ứng Hóa học, thí nghiệm Vật lí và hình động Sinh học. Kéo thanh trượt, bấm nút, quan sát hiện tượng và số liệu thay đổi ngay. JavaScript thuần + Canvas, không cần cài thêm gì trên trình duyệt.
+
+## 🌐 Dùng thử
+
+| Link | Ghi chú |
+|---|---|
+| _(sẽ cập nhật sau khi deploy Render)_ | Bản miễn phí: sau 15 phút không có người xem, lần mở đầu chờ 30–60 giây. |
+
+## ✨ Có gì bên trong
+
+| Môn | Số bài | Ví dụ |
+|---|---|---|
+| ⚗️ Hóa học 12 | 26 | ester hóa, tráng bạc, xà phòng hóa, pin Galvani, điện phân, ăn mòn, nước cứng, phức chất, **chuẩn độ KMnO4** |
+| 🧲 Vật lí 12 | 24 | mô hình động học phân tử, định luật chất khí, định luật I, cảm ứng điện từ, máy biến áp, phóng xạ, **3 bài thực hành đo đại lượng** |
+| 🧬 Sinh học 12 | 31 | nhân đôi DNA, phiên mã, dịch mã, operon Lac, Mendel, phả hệ, Hardy–Weinberg, chọn lọc tự nhiên, Miller–Urey, sinh thái |
+
+Mỗi bài có: hình động, bảng điều khiển, số liệu tức thời, phương trình/công thức, giải thích, gợi ý "Hãy thử & quan sát" và "Liên hệ bài thi". Bảng đối chiếu từng chương SGK với từng bài: [docs/PROJECT.md](docs/PROJECT.md).
+
+## 🏃 Chạy trên máy
+
+Cần [Node.js](https://nodejs.org/) 18 trở lên.
 
 ```bash
 npm install
-npm start          # http://localhost:3000
-npm run dev        # tự khởi động lại khi sửa server
-npm test           # kiểm tra mọi module mô phỏng + server
-npm run catalog    # sinh data/catalog.json từ các module
+npm start          # mở http://localhost:3000
+npm test           # 34 kiểm tra tự động
+npm run build      # (tùy chọn) đóng gói bản tĩnh vào dist/
 ```
 
-## Bố cục repo
+## ✅ Kiểm tra chất lượng
 
+`npm test` chạy tự động trên GitHub Actions mỗi lần push:
+- chạy mọi bài ở giá trị mặc định, min, max của từng thanh trượt và mọi lựa chọn, bắt lỗi chạy và tọa độ vẽ NaN;
+- đối chiếu 21 đáp số với SGK: hiệu suất ester hóa 2/3, E° Zn–Cu 1,10 V, Hardy–Weinberg, thí nghiệm Gause, bán rã, máy biến áp, thấu kính, chuẩn độ…
+
+## 🧩 Cấu trúc
+
+```text
+science_phenomenons/
+├── web/            # Giao diện: index.html, css/, js/app.js (router), js/core/, js/sims/<môn>/
+├── data/           # curriculum.json (môn → chương), catalog.json (sinh tự động)
+├── server/         # Express: phục vụ web, /api/health, /api/feedback, /api/stats
+├── tests/          # node --test
+├── tools/          # build-catalog.js, build-static.js
+├── docs/           # PROJECT.md (kiến trúc, danh sách bài), LEGACY_REVIEW.md
+└── old/            # Bản Streamlit (Python) đầu tiên, giữ để tham chiếu
 ```
-data/       curriculum.json (môn → chương), catalog.json (sinh tự động)
-docs/       LEGACY_REVIEW.md – rà soát bản Streamlit cũ, PROJECT.md – kiến trúc & danh sách bài
-old/        bản Streamlit (Python) gốc, giữ để tham chiếu
-server/     Express: static + /api/catalog, /api/health, /api/feedback
-tests/      node --test: kiểm tra metadata, chạy thử update/draw mọi bài
-tools/      build-catalog.js
-web/        index.html, css/, js/app.js (router), js/core/ (engine, draw, ui), js/sims/<môn>/
-```
 
-## Thêm một bài mô phỏng
+**Thêm một bài**: tạo `web/js/sims/<chem|physics|bio>/<ten-bai>.js` theo mẫu trong [docs/PROJECT.md](docs/PROJECT.md), thêm đường dẫn vào `web/js/core/registry.js`, chạy `npm test`.
 
-1. Tạo `web/js/sims/<chem|physics|bio>/<ten-bai>.js` với `export default { id, subject, chapter, title, summary, equation, theory, observe, exam, params, actions, create(ctx) }`.
-2. `create()` trả về `{ update(dt, p, t), draw(g, w, h, p, t), metrics?(p), action?(key, p), onParam?(key, p) }`.
-3. Thêm đường dẫn vào `SIM_PATHS` trong `web/js/core/registry.js`, chạy `npm test`.
+## 🚀 Deploy trên Render
 
-## Tiến độ
+**Web Service** (mặc định, đã có `render.yaml`): New → Blueprint → chọn repo. Build `npm ci --omit=dev && npm run catalog`, Start `npm start`, Health Check `/healthz`. Có form góp ý và thống kê lượt mở bài, lưu file tạm trong `var/` (mất khi Render khởi động lại).
 
-| Môn | Bài đã có | Trạng thái |
-|---|---|---|
-| Hóa học 12 | 16 | ✅ đủ 8 chương |
-| Vật lí 12 | 16 | ✅ đủ 4 chương + 2 bài kế thừa bản gốc |
-| Sinh học 12 | 16 | ✅ đủ 6 chương |
+**Static Site** (không ngủ, mở nhanh): Build `npm run build`, Publish directory `dist`. Form góp ý tự ẩn vì không có server.
 
-## Deploy Render + Upstash (giống repo Hackathon)
+Upstash Redis là tùy chọn: đặt `UPSTASH_REDIS_REST_URL` và `UPSTASH_REDIS_REST_TOKEN` cho Web Service nếu muốn góp ý không bị mất.
 
-1. **Upstash**: tạo database Redis (free) → tab *REST API* → copy `UPSTASH_REDIS_REST_URL` và `UPSTASH_REDIS_REST_TOKEN`.
-2. **Render** → New → *Blueprint* (đọc `render.yaml`) hoặc *Web Service*: Language `Node`, Build `npm ci --omit=dev && npm run catalog`, Start `npm start`, Health Check `/healthz`.
-3. Environment: điền 2 biến Upstash ở trên và `ADMIN_KEY` (chuỗi bí mật tùy ý).
-4. Deploy xong có link dạng `https://<tên-service>.onrender.com`. Free tier ngủ sau 15 phút không có người xem, lần mở đầu mất 30–60 s.
-
-Dữ liệu lưu trên Upstash: phản hồi (`/api/feedback`, tối đa 500 mục, xem bằng `/api/feedback?key=ADMIN_KEY`) và lượt mở từng bài (`/api/stats`). Không có biến Upstash thì server ghi file JSON vào `var/` (mất khi Render restart).
-
-## Tác giả
+## 👤 Tác giả
 
 Trần Quốc Thành · [GitHub](https://github.com/thanhtq2701-alt)
