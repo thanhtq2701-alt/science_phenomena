@@ -1,4 +1,4 @@
-# Science Phenomenons 12 – Tổng quan dự án
+# Science Phenomena 12 – Tổng quan dự án
 
 ## Mục tiêu
 Phòng thí nghiệm ảo cho học sinh lớp 12 (Chương trình GDPT 2018), ba môn Hóa – Lí – Sinh, chạy hoàn toàn trên trình duyệt, không cần cài đặt. Mỗi bài: hình động trên Canvas + thanh trượt điều kiện + số liệu tức thời + phần lí thuyết, gợi ý quan sát, liên hệ bài thi.

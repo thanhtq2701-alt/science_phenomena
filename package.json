@@ -1,5 +1,5 @@
 {
-  "name": "science-phenomenons",
+  "name": "science-phenomena",
   "version": "2.0.0",
   "description": "Mô phỏng Hóa học – Vật lí – Sinh học lớp 12: phản ứng, thí nghiệm, mô hình sinh động trên trình duyệt.",
   "main": "server/index.js",

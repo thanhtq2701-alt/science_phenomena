@@ -260,7 +260,7 @@ function renderAbout() {
   app.replaceChildren(
     el('h1', {}, 'Giới thiệu'),
     el('div', { class: 'about' },
-      el('p', {}, 'Science Phenomenons 12 là phòng thí nghiệm ảo cho học sinh lớp 12: mô phỏng phản ứng Hóa học, thí nghiệm Vật lí và các quá trình Sinh học bằng hình động dễ hiểu, chạy hoàn toàn trên trình duyệt.'),
+      el('p', {}, 'Science Phenomena 12 là phòng thí nghiệm ảo cho học sinh lớp 12: mô phỏng phản ứng Hóa học, thí nghiệm Vật lí và các quá trình Sinh học bằng hình động dễ hiểu, chạy hoàn toàn trên trình duyệt.'),
       el('p', {}, 'Nội dung bám theo Chương trình Giáo dục phổ thông 2018. Mỗi bài có phương trình/công thức, lời giải thích, gợi ý quan sát và liên hệ bài thi.'),
       el('h3', {}, 'Cách dùng'),
       el('ul', {}, el('li', {}, 'Chọn môn → chương → bài. Dùng thanh trượt bên phải để đổi điều kiện (nhiệt độ, nồng độ, dòng điện...).'), el('li', {}, 'Nút "Làm lại" đưa thí nghiệm về trạng thái đầu; chọn tốc độ ×0.25 để xem chậm.'), el('li', {}, 'Mục "Hãy thử & quan sát" gợi ý các thao tác đáng làm.')),

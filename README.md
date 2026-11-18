@@ -1,6 +1,6 @@
-# 🔬 Science Phenomenons 12 – Phòng thí nghiệm ảo Hóa · Lí · Sinh
+# 🔬 Science Phenomena 12 – Phòng thí nghiệm ảo Hóa · Lí · Sinh
 
-[![CI](https://github.com/thanhtq2701-alt/science_phenomenons/actions/workflows/ci.yml/badge.svg)](https://github.com/thanhtq2701-alt/science_phenomenons/actions/workflows/ci.yml)
+[![CI](https://github.com/thanhtq2701-alt/science_phenomena/actions/workflows/ci.yml/badge.svg)](https://github.com/thanhtq2701-alt/science_phenomena/actions/workflows/ci.yml)
 ![Mô phỏng](https://img.shields.io/badge/m%C3%B4%20ph%E1%BB%8Fng-81-4ade80)
 ![Node](https://img.shields.io/badge/node-%E2%89%A518-339933?logo=node.js&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Canvas-f7df1e?logo=javascript&logoColor=black)
@@ -59,7 +59,7 @@ npm run build      # (tùy chọn) đóng gói bản tĩnh vào dist/
 ## 🧩 Cấu trúc
 
 ```text
-science_phenomenons/
+science_phenomena/
 ├── web/            # Giao diện: index.html, css/, js/app.js (router), js/core/, js/sims/<môn>/
 ├── data/           # curriculum.json (môn → chương), catalog.json (sinh tự động)
 ├── server/         # Express: phục vụ web, /api/health, /api/feedback, /api/stats

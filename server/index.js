@@ -86,7 +86,7 @@ if (isMain) {
   const PORT = process.env.PORT || 3000;
   const app = createApp();
   const server = app.listen(PORT, () => {
-    console.log(`Science Phenomenons 12 đang chạy tại http://localhost:${PORT} (kho dữ liệu: ${app.storageKind})`);
+    console.log(`Science Phenomena 12 đang chạy tại http://localhost:${PORT} (kho dữ liệu: ${app.storageKind})`);
   });
   const shutdown = async () => { await app.flush(); server.close(() => process.exit(0)); setTimeout(() => process.exit(0), 3000).unref(); };
   process.on('SIGTERM', shutdown);
