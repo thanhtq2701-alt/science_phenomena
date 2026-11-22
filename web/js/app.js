@@ -174,14 +174,18 @@ function renderSim(id, query = new URLSearchParams()) {
   const params = applyQuery(sim, defaultParams(sim), query);
   const canvas = el('canvas', { class: 'stage' });
   const metricsBox = el('div', { class: 'metrics' });
+  const metricsPanel = el('div', {}, el('h3', {}, 'Số liệu'), metricsBox);
+  const revealMetrics = () => { metricsPanel.hidden = false; };
+  const prediction = sim.quiz ? buildQuiz(sim.quiz, revealMetrics) : null;
+  metricsPanel.hidden = !!prediction;
   const controls = buildControls(sim, params, (k, v) => state.runner && state.runner.setParam(k, v));
 
   const panel = el('aside', { class: 'panel' },
     el('h3', {}, 'Điều khiển'),
     controls,
     el('div', { id: 'actions' }),
-    el('h3', {}, 'Số liệu'),
-    metricsBox
+    prediction,
+    metricsPanel
   );
 
   const eqs = sim.equation ? (Array.isArray(sim.equation) ? sim.equation : [sim.equation]) : [];
@@ -217,13 +221,52 @@ function renderSim(id, query = new URLSearchParams()) {
   const runner = new Runner(canvas, sim, params);
   state.runner = runner;
   if (state.api) fetch('/api/view', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sim: sim.id }) }).catch(() => {});
-  document.getElementById('actions').replaceWith(buildActions(sim, runner));
+  const actions = buildActions(sim, runner);
+  const shareButton = el('button', { class: 'btn', onclick: async () => {
+    const link = simLink(sim, runner.params);
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(link);
+        shareButton.textContent = '✓ Đã chép';
+        window.setTimeout(() => { shareButton.textContent = '🔗 Sao chép link'; }, 1500);
+        return;
+      } catch {}
+    }
+    window.prompt('Sao chép link mô phỏng:', link);
+  } }, '🔗 Sao chép link');
+  actions.append(shareButton);
+  document.getElementById('actions').replaceWith(actions);
   let acc = 0;
   runner.onFrame((r) => {
     acc++;
     if (acc % 6 !== 0 || !r.inst || !r.inst.metrics) return;
     renderMetrics(metricsBox, r.inst.metrics(r.params, r.time));
   });
+}
+
+function buildQuiz(quiz, onAnswer) {
+  const feedback = el('p', { hidden: true });
+  const choices = el('div', { class: 'quiz-options' },
+    ...quiz.options.map((option, index) => el('button', {
+      class: 'btn',
+      type: 'button',
+      onclick: () => {
+        const correct = index === quiz.answer;
+        for (const button of choices.children) button.disabled = true;
+        feedback.textContent = correct
+          ? `Chính xác. ${quiz.explanation}`
+          : `Chưa chính xác. Đáp án đúng: ${quiz.options[quiz.answer]}. ${quiz.explanation}`;
+        feedback.hidden = false;
+        onAnswer();
+      }
+    }, option))
+  );
+  return el('section', { class: 'prediction' },
+    el('h3', {}, 'Dự đoán trước'),
+    el('p', {}, quiz.question),
+    choices,
+    feedback
+  );
 }
 
 /** Đặt sẵn tham số từ link, vd #/sim/physics-kinetic-model?temp=610 (bỏ qua giá trị không hợp lệ) */
@@ -237,6 +280,28 @@ function applyQuery(sim, params, query) {
     else if (type === 'select') { const opt = spec.options.find((o) => String(o[0]) === raw); if (opt) params[spec.key] = opt[0]; }
   }
   return params;
+}
+
+function simLink(sim, params) {
+  const query = new URLSearchParams();
+  const defaults = defaultParams(sim);
+  for (const spec of sim.params || []) {
+    const type = spec.type || 'range';
+    const serialize = (value) => {
+      if (type === 'toggle') return value ? '1' : '0';
+      if (type === 'range') {
+        const step = String(spec.step ?? 1).toLowerCase();
+        const [base, exponent = '0'] = step.split('e');
+        const decimals = spec.decimals ?? Math.max(0, (base.split('.')[1] || '').length - Number(exponent));
+        return String(Number(Number(value).toFixed(decimals)));
+      }
+      return String(value);
+    };
+    const value = serialize(params[spec.key]);
+    if (value !== serialize(defaults[spec.key])) query.set(spec.key, value);
+  }
+  const search = query.toString();
+  return `${window.location.origin}${window.location.pathname}#/sim/${sim.id}${search ? `?${search}` : ''}`;
 }
 
 function chemMd(t) { return md(t).replace(/\{\{(.+?)\}\}/g, (m, f) => chem(f)); }
