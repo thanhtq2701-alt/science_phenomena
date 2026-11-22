@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Kéo thể tích từ 5 L xuống 1 L: áp suất tăng 5 lần, điểm chạy trên hypebol.', 'Đổi nhiệt độ để thấy họ đường đẳng nhiệt khác nhau.'],
   exam: ['Bài toán p1V1 = p2V2; nhận dạng đồ thị đẳng nhiệt trong các hệ trục p–V, p–T, V–T.'],
+  quiz: {
+    question: 'Giữ nhiệt độ không đổi và giảm thể tích khí còn một nửa. Áp suất sẽ thay đổi thế nào?',
+    options: ['Giảm còn một nửa', 'Tăng gấp đôi', 'Không đổi'],
+    answer: 1,
+    explanation: 'Theo định luật Boyle, áp suất tỉ lệ nghịch với thể tích khi nhiệt độ không đổi.'
+  },
   params: [
     { key: 'V', label: 'Thể tích', min: 1, max: 5, step: 0.1, value: 3, unit: 'L', decimals: 1 },
     { key: 'T', label: 'Nhiệt độ (giữ không đổi)', min: 200, max: 500, step: 10, value: 300, unit: 'K' }
