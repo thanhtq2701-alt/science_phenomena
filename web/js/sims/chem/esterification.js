@@ -42,6 +42,12 @@ export default {
     'Tăng nhiệt độ: **tốc độ** tăng nhưng **hiệu suất cân bằng** gần như không đổi (phản ứng có ΔH ≈ 0).'
   ],
   exam: ['Tính hiệu suất phản ứng ester hóa từ K hoặc từ lượng ester thu được.', 'Giải thích vai trò của H2SO4 đặc và cách tăng hiệu suất.'],
+  quiz: {
+    question: 'Trộn acid acetic và ethanol theo tỉ lệ mol 1 : 1, có H2SO4 đặc, đun nóng thật lâu. Hiệu suất tạo ester tối đa khoảng bao nhiêu?',
+    options: ['Gần 100%', 'Khoảng 33%', 'Khoảng 67%', 'Bằng 0 vì phản ứng cần thêm nước'],
+    answer: 2,
+    explanation: 'Ester hóa là phản ứng thuận nghịch với K ≈ 4, nên với tỉ lệ 1 : 1 hiệu suất cân bằng chỉ ≈ 2/3. Muốn tăng hiệu suất phải dùng dư alcohol (hoặc acid) hoặc chưng cất lấy ester ra.'
+  },
   params: [
     { key: 'temp', label: 'Nhiệt độ', min: 20, max: 100, step: 5, value: 70, unit: '°C' },
     { key: 'ratio', label: 'Tỉ lệ mol ethanol : acid', min: 0.5, max: 4, step: 0.5, value: 1, decimals: 1 },

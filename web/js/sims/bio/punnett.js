@@ -28,6 +28,12 @@ export default {
   ],
   observe: ['Gieo 20 hạt rồi 500 hạt: xem tỉ lệ thực nghiệm tiến về 3:1.', 'Thử Aa × aa (lai phân tích): tỉ lệ 1:1.', 'Chuyển sang 2 tính trạng, AaBb × AaBb: 16 ô Punnett, 9:3:3:1.'],
   exam: ['Viết sơ đồ lai, xác định tỉ lệ kiểu gene/kiểu hình; tính xác suất xuất hiện kiểu hình ở đời con.', 'Xác định kiểu gene của P từ tỉ lệ đời con.'],
+  quiz: {
+    question: 'Lai hai cây đậu hạt vàng dị hợp Aa × Aa (hạt vàng trội hoàn toàn so với hạt xanh). Tỉ lệ kiểu hình ở đời con xấp xỉ bao nhiêu?',
+    options: ['3 vàng : 1 xanh', '1 vàng : 1 xanh', 'Toàn hạt vàng', '1 vàng : 2 vàng nhạt : 1 xanh'],
+    answer: 0,
+    explanation: 'Aa × Aa cho 1 AA : 2 Aa : 1 aa. Do trội hoàn toàn, AA và Aa đều hạt vàng nên kiểu hình 3 vàng : 1 xanh. Gieo càng nhiều hạt, tỉ lệ thực nghiệm càng gần 3 : 1.'
+  },
   params: [
     { key: 'mode', label: 'Số cặp tính trạng', type: 'select', value: 1, options: [[1, 'Một cặp (màu hạt)'], [2, 'Hai cặp (màu & hình dạng)']] },
     { key: 'p1', label: 'Kiểu gene bố/mẹ 1', type: 'select', value: 'Aa', options: [['AA', 'AA'], ['Aa', 'Aa'], ['aa', 'aa'], ['AABB', 'AABB'], ['AaBb', 'AaBb'], ['AaBB', 'AaBB'], ['Aabb', 'Aabb'], ['aabb', 'aabb']] },

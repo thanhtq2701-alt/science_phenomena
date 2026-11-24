@@ -18,6 +18,12 @@ export default {
   ],
   observe: ['Đổi vật nóng từ đồng sang nhôm cùng khối lượng: nhiệt độ cân bằng cao hơn vì c nhôm lớn hơn.', 'Tăng khối lượng nước: nhiệt độ cân bằng gần nhiệt độ nước hơn.'],
   exam: ['Tính nhiệt độ cân bằng; tính nhiệt dung riêng của kim loại từ thí nghiệm.'],
+  quiz: {
+    question: 'Thả 0,5 kg đồng ở 150 °C vào 0,5 kg nước ở 20 °C. Nhiệt độ khi cân bằng gần giá trị nào nhất?',
+    options: ['Khoảng 85 °C (trung bình cộng hai nhiệt độ)', 'Khoảng 120 °C, gần nhiệt độ của đồng', 'Khoảng 31 °C, gần nhiệt độ của nước'],
+    answer: 2,
+    explanation: 'Nhiệt dung riêng của nước (4200 J/kg·K) lớn gấp khoảng 11 lần đồng (380 J/kg·K), nên nước thay đổi nhiệt độ ít. T = (0,5·380·150 + 0,5·4200·20) / (0,5·380 + 0,5·4200) ≈ 31 °C.'
+  },
   params: [
     { key: 'mat', label: 'Vật nóng', type: 'select', value: 'cu', options: Object.entries(MATS).map(([k, v]) => [k, v[0]]) },
     { key: 'm1', label: 'Khối lượng vật nóng', min: 0.1, max: 2, step: 0.1, value: 0.5, unit: 'kg', decimals: 1 },

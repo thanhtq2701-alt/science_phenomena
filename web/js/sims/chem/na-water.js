@@ -22,6 +22,12 @@ export default {
   ],
   observe: ['Bật phenolphthalein để thấy vệt hồng lan ra từ vị trí mẩu kim loại.', 'Đổi sang K: xuất hiện ngọn lửa tím; sang Li: chậm hơn nhiều.', 'Tăng kích thước mẩu: phản ứng kéo dài hơn và mạnh hơn.'],
   exam: ['Giải thích hiện tượng thí nghiệm Na + H2O; tính thể tích H2 và nồng độ NaOH thu được.', 'So sánh mức độ phản ứng của Li, Na, K với nước; cách bảo quản kim loại kiềm.'],
+  quiz: {
+    question: 'Thả một mẩu sodium (Na) vào chậu nước có vài giọt phenolphthalein. Hiện tượng nào đúng?',
+    options: ['Na chìm xuống đáy, tan từ từ, nước không đổi màu', 'Na bốc cháy với ngọn lửa màu tím', 'Na chạy trên mặt nước, sủi bọt khí, nước quanh mẩu Na hóa hồng', 'Na nổi yên, không phản ứng'],
+    answer: 2,
+    explanation: 'Na nhẹ hơn nước, phản ứng tỏa nhiệt làm Na nóng chảy thành giọt tròn và khí H2 đẩy nó chạy trên mặt nước. NaOH sinh ra làm phenolphthalein hóa hồng. Ngọn lửa tím là của K.'
+  },
   params: [
     { key: 'metal', label: 'Kim loại', type: 'select', value: 'Na', options: Object.entries(METALS).map(([k, v]) => [k, `${k} – ${v.name}`]) },
     { key: 'size', label: 'Kích thước mẩu', min: 1, max: 5, step: 1, value: 3 },

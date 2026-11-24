@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Tăng hiệu quả săn mồi b: biên độ dao động lớn hơn, con mồi có thể gần như cạn kiệt.', 'Nhìn đồ thị pha (N–P): quỹ đạo là vòng kín – dao động bền.', 'Giảm tỉ lệ tử của cáo d: cáo đông hơn, thỏ giảm.'],
   exam: ['Giải thích cơ chế điều chỉnh số lượng cá thể của quần thể; khống chế sinh học.', 'Đọc đồ thị biến động số lượng của hai loài và xác định mối quan hệ.'],
+  quiz: {
+    question: 'Trong quan hệ thỏ – cáo, khi số lượng thỏ đạt đỉnh thì số lượng cáo thế nào?',
+    options: ['Đạt đỉnh cùng lúc với thỏ', 'Đã đạt đỉnh trước thỏ', 'Luôn không đổi', 'Đạt đỉnh sau thỏ một khoảng thời gian'],
+    answer: 3,
+    explanation: 'Cáo cần thời gian để sinh sản nhờ nguồn thỏ dồi dào, nên đỉnh số lượng cáo trễ pha so với thỏ. Cáo đông lên thì thỏ giảm, rồi cáo thiếu mồi cũng giảm theo.'
+  },
   params: [
     { key: 'a', label: 'Tỉ lệ sinh của thỏ (a)', min: 0.2, max: 1.5, step: 0.1, value: 0.8, decimals: 1 },
     { key: 'b', label: 'Hiệu quả săn mồi (b)', min: 0.005, max: 0.05, step: 0.005, value: 0.02, decimals: 3 },

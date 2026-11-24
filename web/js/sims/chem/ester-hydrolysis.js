@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Giảm nhiệt độ xuống 25 °C: cả hai ống gần như không đổi trong thời gian mô phỏng.', 'Bật "chất béo + NaOH": thấy lớp dầu mất dần và xuất hiện bọt xà phòng.'],
   exam: ['Nhận biết ester/chất béo bằng phản ứng xà phòng hóa; viết PTHH thủy phân chất béo.', 'Giải thích vì sao ống NaOH không còn lớp ester còn ống acid thì có.'],
+  quiz: {
+    question: 'Đun ethyl acetate với H2SO4 loãng (ống 1) và với dung dịch NaOH (ống 2). Sau một thời gian, lớp ester nổi phía trên còn ở ống nào?',
+    options: ['Chỉ còn ở ống H2SO4 loãng', 'Chỉ còn ở ống NaOH', 'Còn ở cả hai ống', 'Mất hết ở cả hai ống'],
+    answer: 0,
+    explanation: 'Trong môi trường acid, thủy phân ester là phản ứng thuận nghịch nên vẫn còn ester. Trong NaOH, acid sinh ra bị trung hòa thành muối nên phản ứng một chiều (xà phòng hóa), lớp ester biến mất.'
+  },
   params: [
     { key: 'temp', label: 'Nhiệt độ', min: 25, max: 100, step: 5, value: 80, unit: '°C' },
     { key: 'sub', label: 'Chất đem thủy phân', type: 'select', value: 'ester', options: [['ester', 'Ethyl acetate'], ['fat', 'Chất béo (tristearin)']] }

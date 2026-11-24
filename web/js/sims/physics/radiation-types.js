@@ -24,6 +24,12 @@ export default {
   ],
   observe: ['Bật từ trường: α và β⁻ lệch về hai phía, γ đi thẳng.', 'Đặt tờ giấy: chỉ α bị chặn. Lá nhôm: chặn cả β. Chì: chặn phần lớn γ.', 'So sánh độ cong: β nhẹ nên lệch nhiều hơn α.'],
   exam: ['So sánh bản chất, điện tích, khả năng ion hóa và đâm xuyên của các tia.', 'Xác định chiều lệch của tia trong điện trường/từ trường.'],
+  quiz: {
+    question: 'Cho các tia α, β⁻ và γ đi qua vùng có từ trường. Tia nào đi thẳng, không bị lệch?',
+    options: ['γ', 'α', 'β⁻', 'Cả ba đều bị lệch'],
+    answer: 0,
+    explanation: 'Tia γ là sóng điện từ (photon), không mang điện nên không chịu lực từ. α (+2e) và β⁻ (−e) mang điện nên bị lệch về hai phía ngược nhau; β lệch nhiều hơn vì rất nhẹ.'
+  },
   params: [
     { key: 'B', label: 'Từ trường (vuông góc, hướng vào)', min: 0, max: 1, step: 0.1, value: 0.5, decimals: 1 },
     { key: 'barrier', label: 'Vật cản', type: 'select', value: 'none', options: BARRIERS },

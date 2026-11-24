@@ -79,6 +79,23 @@ test('tham số có key/label/value hợp lệ', () => {
   }
 });
 
+test('quiz "Dự đoán trước" hợp lệ và mỗi môn có ít nhất 10 bài', () => {
+  for (const s of sims) {
+    if (!s.quiz) continue;
+    const q = s.quiz;
+    assert.ok(typeof q.question === 'string' && q.question.length > 10, `${s.id}: quiz thiếu question`);
+    assert.ok(Array.isArray(q.options) && q.options.length >= 2, `${s.id}: quiz cần ≥2 options`);
+    assert.ok(q.options.every((o) => typeof o === 'string' && o.length), `${s.id}: quiz có option rỗng`);
+    assert.equal(new Set(q.options).size, q.options.length, `${s.id}: quiz có option trùng`);
+    assert.ok(Number.isInteger(q.answer) && q.answer >= 0 && q.answer < q.options.length, `${s.id}: quiz.answer ngoài options`);
+    assert.ok(typeof q.explanation === 'string' && q.explanation.length > 10, `${s.id}: quiz thiếu explanation`);
+  }
+  for (const sub of curriculum.subjects) {
+    const n = sims.filter((s) => s.subject === sub.id && s.quiz).length;
+    assert.ok(n >= 10, `${sub.id}: chỉ có ${n} quiz`);
+  }
+});
+
 test('create/update/draw/metrics chạy không lỗi (mọi tổ hợp select)', () => {
   const g = fakeContext();
   for (const s of sims) {

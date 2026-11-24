@@ -177,7 +177,8 @@ function renderSim(id, query = new URLSearchParams()) {
   const metricsPanel = el('div', { class: 'panel-group' }, el('h3', {}, 'Số liệu'), metricsBox);
   const controls = buildControls(sim, params, (k, v) => state.runner && state.runner.setParam(k, v));
   // Quiz: che canvas, khóa điều khiển và ẩn số liệu cho tới khi học sinh trả lời
-  const quizLock = sim.quiz ? el('div', { class: 'quiz-lock' }, '🔒 Trả lời câu "Dự đoán trước" để mở mô phỏng') : null;
+  const quizLock = sim.quiz ? el('button', { class: 'quiz-lock', type: 'button', onclick: () => prediction.scrollIntoView({ behavior: 'smooth', block: 'center' }) },
+    '🔒 Trả lời câu "Dự đoán trước" để mở mô phỏng', el('small', {}, 'Bấm để tới câu hỏi')) : null;
   const setLocked = (locked) => {
     for (const input of document.querySelectorAll('.panel .controls :is(input, select, button), .panel .actions :is(select, button)')) input.disabled = locked;
   };

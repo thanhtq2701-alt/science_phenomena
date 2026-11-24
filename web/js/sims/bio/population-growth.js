@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Chọn "không giới hạn" để xem bùng nổ hàm mũ.', 'Tăng r: đạt K nhanh hơn; giảm K: đường cong "phẳng" sớm hơn.', 'Bắt đầu N0 > K: quần thể giảm về K.'],
   exam: ['Phân biệt hai kiểu tăng trưởng và điều kiện; đọc đồ thị, xác định K.', 'Tính kích thước quần thể sau t khi biết r (tăng trưởng mũ).'],
+  quiz: {
+    question: 'Quần thể bắt đầu với 20 cá thể trong môi trường có sức chứa K = 500. Theo thời gian, số lượng cá thể sẽ thế nào?',
+    options: ['Tăng mãi theo hàm mũ (đường cong chữ J)', 'Tăng tới 500 rồi giảm về 0', 'Tăng nhanh rồi chậm dần, ổn định quanh 500 (đường cong chữ S)', 'Giữ nguyên khoảng 20'],
+    answer: 2,
+    explanation: 'Khi số lượng tăng, cạnh tranh về thức ăn và nơi ở tăng, tỉ lệ sinh giảm và tỉ lệ tử tăng, nên tăng trưởng chậm dần và ổn định quanh sức chứa K: đường cong chữ S (logistic).'
+  },
   params: [
     { key: 'mode', label: 'Môi trường', type: 'select', value: 'logistic', options: [['logistic', 'Có giới hạn (sức chứa K)'], ['exp', 'Không giới hạn']] },
     { key: 'r', label: 'Tốc độ tăng trưởng r', min: 0.05, max: 1, step: 0.05, value: 0.3, decimals: 2 },

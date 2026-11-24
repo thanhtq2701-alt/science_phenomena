@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Đặt α = 0: thanh không chuyển động dù I lớn.', 'Đảo dấu I: thanh chạy ngược lại.', 'Tăng B và I: gia tốc thanh tăng theo tích B·I.'],
   exam: ['Tính F = BIL sinα; xác định chiều lực bằng bàn tay trái.', 'Bài toán thanh trượt trên ray, dây treo trong từ trường, cân bằng lực.'],
+  quiz: {
+    question: 'Thanh kim loại trên hai ray đặt trong từ trường đang bị đẩy về một phía khi có dòng điện. Nếu đổi chiều dòng điện I, thanh sẽ thế nào?',
+    options: ['Bị đẩy theo chiều ngược lại', 'Bị đẩy mạnh hơn theo chiều cũ', 'Đứng yên', 'Bị nhấc lên khỏi ray'],
+    answer: 0,
+    explanation: 'Lực từ F = B·I·L·sinα có chiều theo quy tắc bàn tay trái. Đổi chiều dòng điện (hoặc đổi chiều từ trường) thì lực đổi chiều, độ lớn không đổi.'
+  },
   params: [
     { key: 'B', label: 'Cảm ứng từ B', min: -1, max: 1, step: 0.1, value: 0.5, unit: 'T', decimals: 1, help: 'dương: hướng vào màn hình (×), âm: hướng ra (•)' },
     { key: 'I', label: 'Dòng điện I', min: -5, max: 5, step: 0.5, value: 2, unit: 'A', decimals: 1 },

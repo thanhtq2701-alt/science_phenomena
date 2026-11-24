@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Chọn thí nghiệm Cu(OH)2 rồi tăng nhiệt độ: màu chuyển xanh lam → vàng → đỏ gạch khi đun.', 'Tráng bạc: đun nhẹ 60–70 °C cho lớp bạc bám đều; đun sôi mạnh bạc tách thành bột đen.', 'Thử với saccharose: không có hiện tượng với thuốc thử Tollens.'],
   exam: ['Phân biệt glucose – fructose – saccharose – tinh bột bằng Cu(OH)2, AgNO3/NH3, I2.', 'Tính khối lượng Ag thu được: 1 mol glucose → 2 mol Ag.'],
+  quiz: {
+    question: 'Nhỏ dung dịch glucose vào Cu(OH)2 trong NaOH ở nhiệt độ thường, chưa đun. Hiện tượng là gì?',
+    options: ['Không có hiện tượng gì', 'Xuất hiện ngay kết tủa đỏ gạch', 'Kết tủa tan, tạo dung dịch xanh lam', 'Có lớp bạc bám lên thành ống'],
+    answer: 2,
+    explanation: 'Glucose có nhiều nhóm –OH kề nhau nên hòa tan Cu(OH)2 tạo phức xanh lam ở nhiệt độ thường. Phải đun nóng thì nhóm –CHO mới khử Cu(OH)2 thành Cu2O đỏ gạch.'
+  },
   params: [
     { key: 'test', label: 'Thí nghiệm', type: 'select', value: 'cuoh2', options: [['cuoh2', 'Cu(OH)2 trong NaOH'], ['ag', 'AgNO3/NH3 (Tollens)']] },
     { key: 'sugar', label: 'Chất thử', type: 'select', value: 'glucose', options: [['glucose', 'Glucose'], ['fructose', 'Fructose'], ['saccharose', 'Saccharose'], ['starch', 'Tinh bột']] },

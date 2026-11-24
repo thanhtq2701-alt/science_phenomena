@@ -21,6 +21,12 @@ export default {
   ],
   observe: ['Thử Cu vào FeSO4: không hiện tượng – vì Cu đứng sau Fe.', 'Zn vào HCl: bọt khí H2; Cu vào HCl: không.', 'Ag+ với mọi kim loại trong danh sách đều phản ứng.'],
   exam: ['Dự đoán phản ứng theo dãy điện hóa; bài toán tăng/giảm khối lượng thanh kim loại.', 'Sắp xếp tính khử/oxi hóa; viết PT ion thu gọn.'],
+  quiz: {
+    question: 'Nhúng đinh sắt (Fe) vào dung dịch CuSO4 màu xanh. Hiện tượng là gì?',
+    options: ['Không có hiện tượng gì', 'Có bọt khí H2 thoát ra', 'Dung dịch xanh đậm hơn, đinh sắt không đổi', 'Đồng màu đỏ bám lên đinh sắt, màu xanh của dung dịch nhạt dần'],
+    answer: 3,
+    explanation: 'Fe đứng trước Cu trong dãy điện hóa nên đẩy được Cu ra khỏi muối: Fe + CuSO4 → FeSO4 + Cu. Cu2+ (màu xanh) bị tiêu thụ nên dung dịch nhạt màu.'
+  },
   params: [
     { key: 'metal', label: 'Thanh kim loại', type: 'select', value: 'Fe', options: Object.keys(METAL).map((k) => [k, k]) },
     { key: 'sol', label: 'Dung dịch', type: 'select', value: 'Cu2+', options: Object.keys(SOL).map((k) => [k, k]) }

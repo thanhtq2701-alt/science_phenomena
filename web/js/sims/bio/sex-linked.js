@@ -18,6 +18,12 @@ export default {
   ],
   observe: ['Mẹ XᴬXᵃ × bố XᴬY: con gái đều bình thường, 50% con trai bệnh.', 'Mẹ XᵃXᵃ × bố XᴬY: tất cả con trai bệnh, con gái đều mang gene.', 'Để có con gái bệnh phải có bố bệnh và mẹ ít nhất mang gene.'],
   exam: ['Xác định kiểu gene của bố mẹ từ phả hệ; tính xác suất sinh con trai/gái bị bệnh.', 'Phân biệt di truyền liên kết X với di truyền thường và di truyền Y.'],
+  quiz: {
+    question: 'Mẹ mang gene mù màu (XᴬXᵃ), bố bình thường (XᴬY). Dự đoán về con của họ?',
+    options: ['Con trai và con gái đều có khoảng 25% bị bệnh', 'Tất cả con trai bị bệnh', 'Không con nào bị bệnh vì bố bình thường', 'Con gái đều không bị bệnh, khoảng 50% con trai bị bệnh'],
+    answer: 3,
+    explanation: 'Con gái luôn nhận Xᴬ từ bố nên không bị bệnh (một nửa mang gene). Con trai nhận Y từ bố và một trong hai X của mẹ, nên 50% nhận Xᵃ và bị bệnh.'
+  },
   params: [
     { key: 'mom', label: 'Mẹ', type: 'select', value: 'XAXa', options: Object.entries(MOTHERS) },
     { key: 'dad', label: 'Bố', type: 'select', value: 'XAY', options: Object.entries(FATHERS) },

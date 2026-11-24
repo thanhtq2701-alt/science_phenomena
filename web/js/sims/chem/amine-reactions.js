@@ -23,6 +23,12 @@ export default {
   ],
   observe: ['Chọn "Quỳ tím" và đổi giữa methylamine / aniline để thấy khác biệt tính base.', 'Chọn "Nước bromine" và nhỏ dần Br2: màu vàng của Br2 mất đi, kết tủa trắng xuất hiện.'],
   exam: ['So sánh tính base: NH3, CH3NH2, (CH3)2NH, C6H5NH2.', 'Nhận biết aniline bằng nước bromine; tính khối lượng kết tủa.'],
+  quiz: {
+    question: 'Nhúng quỳ tím vào dung dịch methylamine và vào aniline. Quỳ tím đổi màu thế nào?',
+    options: ['Cả hai làm quỳ hóa xanh', 'Aniline làm quỳ hóa xanh, methylamine thì không', 'Cả hai làm quỳ hóa đỏ', 'Methylamine làm quỳ hóa xanh, aniline không đổi màu quỳ'],
+    answer: 3,
+    explanation: 'Methylamine là amine béo, có tính base mạnh hơn NH3 nên làm quỳ hóa xanh. Vòng benzene hút electron làm aniline có tính base rất yếu, không đổi màu quỳ tím.'
+  },
   params: [
     { key: 'amine', label: 'Amine', type: 'select', value: 'methyl', options: [['methyl', 'Methylamine CH3NH2'], ['aniline', 'Aniline C6H5NH2']] },
     { key: 'test', label: 'Thuốc thử', type: 'select', value: 'litmus', options: [['litmus', 'Quỳ tím'], ['hcl', 'HCl đặc (hơi)'], ['br2', 'Nước bromine']] },
