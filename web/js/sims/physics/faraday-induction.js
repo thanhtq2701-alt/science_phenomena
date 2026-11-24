@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Chọn "Tay đưa qua lại": thấy kim điện kế lệch hai chiều ngược nhau khi vào và ra.', 'Chọn "Đứng yên trong ống dây": kim về 0 dù từ thông lớn.', 'Tăng số vòng N: biên độ e tăng tỉ lệ.'],
   exam: ['Tính từ thông, suất điện động cảm ứng; xác định chiều dòng cảm ứng theo Lenz.', 'Giải thích thí nghiệm nam châm – ống dây – điện kế.'],
+  quiz: {
+    question: 'Đưa nam châm vào trong ống dây rồi rút ra. Kim điện kế nối với ống dây lệch thế nào?',
+    options: ['Không lệch', 'Lệch cùng một chiều cả khi đưa vào và khi rút ra', 'Chỉ lệch khi nam châm nằm yên trong ống dây', 'Lệch theo hai chiều ngược nhau khi đưa vào và khi rút ra'],
+    answer: 3,
+    explanation: 'Dòng cảm ứng chỉ xuất hiện khi từ thông biến thiên. Đưa vào thì từ thông tăng, rút ra thì giảm, nên theo định luật Lenz dòng cảm ứng đổi chiều. Nam châm nằm yên thì kim về 0.'
+  },
   params: [
     { key: 'motion', label: 'Chuyển động nam châm', type: 'select', value: 'osc', options: [['osc', 'Tay đưa qua lại (dao động)'], ['in', 'Đưa vào rồi dừng'], ['still', 'Đứng yên trong ống dây']] },
     { key: 'speed', label: 'Tốc độ đưa', min: 0.2, max: 3, step: 0.1, value: 1, decimals: 1 },

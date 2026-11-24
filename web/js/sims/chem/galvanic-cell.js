@@ -20,6 +20,12 @@ export default {
   ],
   observe: ['Rút cầu muối (tắt công tắc cầu muối): vôn kế về 0 – mạch không khép kín.', 'Đổi cặp Mg–Ag để có E° lớn nhất; Cu–Ag chỉ 0,46 V.', 'Để lâu: thanh Zn mòn dần, Cu dày lên, dung dịch CuSO4 nhạt màu.'],
   exam: ['Xác định anode/cathode, chiều dòng electron, viết quá trình tại mỗi điện cực.', 'Tính E°pin từ bảng thế điện cực chuẩn; so sánh tính khử/oxi hóa.'],
+  quiz: {
+    question: 'Pin Zn–Cu đang hoạt động, vôn kế chỉ khoảng 1,10 V. Nếu rút cầu muối ra, vôn kế chỉ bao nhiêu?',
+    options: ['Vẫn khoảng 1,10 V', 'Tăng lên vì bớt cản trở', 'Về 0', 'Đổi dấu thành −1,10 V'],
+    answer: 2,
+    explanation: 'Cầu muối cho ion di chuyển giữa hai cốc để khép kín mạch và giữ dung dịch trung hòa điện. Rút cầu muối thì mạch hở, pin ngừng hoạt động.'
+  },
   params: [
     { key: 'A', label: 'Kim loại điện cực trái', type: 'select', value: 'Zn', options: Object.keys(E0).filter((k) => k !== 'H').map((k) => [k, k]) },
     { key: 'B', label: 'Kim loại điện cực phải', type: 'select', value: 'Cu', options: Object.keys(E0).filter((k) => k !== 'H').map((k) => [k, k]) },

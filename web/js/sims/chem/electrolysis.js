@@ -24,6 +24,12 @@ export default {
   ],
   observe: ['Tăng I: tốc độ Cu bám và khí thoát tăng tỉ lệ.', 'Với CuSO4 điện cực trơ: màu xanh dung dịch nhạt dần, pH giảm (H+ sinh ra).', 'So sánh thể tích khí H2 và O2 khi điện phân nước (2 : 1).'],
   exam: ['Tính m kim loại/ thể tích khí theo I, t; tính thời gian điện phân.', 'Viết quá trình điện cực và PTHH điện phân; xác định pH dung dịch sau điện phân.'],
+  quiz: {
+    question: 'Điện phân dung dịch CuSO4 với điện cực trơ. Ở cathode (nối cực âm của nguồn) xảy ra hiện tượng gì?',
+    options: ['Đồng (Cu) màu đỏ bám lên điện cực', 'Khí O2 thoát ra', 'Khí H2 thoát ra', 'Điện cực tan dần'],
+    answer: 0,
+    explanation: 'Ở cathode xảy ra sự khử: Cu2+ có tính oxi hóa mạnh hơn nước nên bị khử thành Cu bám lên điện cực. Khí O2 thoát ra ở anode do nước bị oxi hóa.'
+  },
   params: [
     { key: 'mode', label: 'Dung dịch', type: 'select', value: 'cuso4', options: Object.entries(MODES).map(([k, v]) => [k, v.title]) },
     { key: 'I', label: 'Cường độ dòng điện', min: 0, max: 5, step: 0.25, value: 2, unit: 'A', decimals: 2 },

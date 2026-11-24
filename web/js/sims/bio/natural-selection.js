@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Nền sáng → bướm tối bị bắt nhiều; nền tối → ngược lại.', 'Tăng áp lực săn mồi: tần số allele thay đổi nhanh hơn.', 'Đổi nền giữa chừng để thấy quần thể "quay đầu" sau vài thế hệ.'],
   exam: ['Giải thích vai trò của chọn lọc tự nhiên đối với tần số allele; phân biệt chọn lọc chống allele trội/lặn.', 'Nêu ví dụ thích nghi và cơ chế hình thành đặc điểm thích nghi.'],
+  quiz: {
+    question: 'Bướm đêm sống trên thân cây màu sáng, chim dễ bắt những con nổi bật trên nền. Qua nhiều thế hệ, tần số allele quy định màu tối sẽ thế nào?',
+    options: ['Tăng dần', 'Giảm dần', 'Không đổi', 'Thay đổi ngẫu nhiên, không theo hướng nào'],
+    answer: 1,
+    explanation: 'Trên nền sáng, bướm tối nổi bật nên bị bắt nhiều hơn, sinh sản ít hơn. Chọn lọc tự nhiên tác động lên kiểu hình và làm tần số allele màu tối giảm theo một hướng xác định.'
+  },
   params: [
     { key: 'bg', label: 'Màu nền (thân cây)', min: 0, max: 1, step: 0.05, value: 0.2, decimals: 2, help: '0 = sáng (rừng sạch), 1 = tối (ô nhiễm)' },
     { key: 'pred', label: 'Áp lực săn mồi', min: 0, max: 0.8, step: 0.05, value: 0.4, decimals: 2 },

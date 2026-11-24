@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Đặt tần số AA = 0,5, aa = 0,5, Aa = 0: ngay thế hệ sau đạt p² : 2pq : q² = 0,25 : 0,5 : 0,25.', 'Bật chọn lọc chống aa: q giảm dần qua các thế hệ (nhưng allele lặn tồn tại lâu trong dị hợp).', 'Chọn tự phối: dị hợp giảm một nửa mỗi thế hệ.'],
   exam: ['Tính p, q từ tỉ lệ kiểu hình; kiểm tra quần thể có cân bằng không; xác suất sinh con bệnh.', 'Tần số kiểu gene sau n thế hệ tự phối.'],
+  quiz: {
+    question: 'Quần thể ban đầu có 0,5 AA : 0,5 aa (không có Aa), ngẫu phối, không chọn lọc, không đột biến. Sau một thế hệ, tỉ lệ kiểu gene là bao nhiêu?',
+    options: ['Vẫn 0,5 AA : 0,5 aa', '0,25 AA : 0,5 Aa : 0,25 aa', '0,5 AA : 0,5 Aa', 'Phải qua nhiều thế hệ mới xuất hiện Aa'],
+    answer: 1,
+    explanation: 'Tần số allele p = q = 0,5. Chỉ sau một thế hệ ngẫu phối, quần thể đạt cân bằng Hardy – Weinberg: p² AA : 2pq Aa : q² aa = 0,25 : 0,5 : 0,25.'
+  },
   params: [
     { key: 'AA', label: 'Tần số AA ban đầu', min: 0, max: 1, step: 0.05, value: 0.5, decimals: 2 },
     { key: 'aa', label: 'Tần số aa ban đầu', min: 0, max: 1, step: 0.05, value: 0.5, decimals: 2, help: 'Aa = 1 − AA − aa (tự tính)' },

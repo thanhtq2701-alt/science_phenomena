@@ -26,6 +26,12 @@ export default {
   ],
   observe: ['Chọn "Chuột": thấy chuột là mắt xích chung của 3 chuỗi.', 'Bật "Loại bỏ loài": xem các loài phụ thuộc hoàn toàn vào nó mất nguồn thức ăn.', 'Đổi năng lượng bậc 1 để thấy tháp năng lượng co giãn.'],
   exam: ['Đếm số chuỗi thức ăn trong lưới; xác định bậc dinh dưỡng của một loài (có thể thuộc nhiều bậc).', 'Tính hiệu suất sinh thái, năng lượng ở mỗi bậc.'],
+  quiz: {
+    question: 'Sinh vật sản xuất tích lũy 10 000 kcal/m²/năm. Theo quy luật 10%, sinh vật tiêu thụ bậc 2 nhận được khoảng bao nhiêu?',
+    options: ['100 kcal', '1 000 kcal', '5 000 kcal', '10 kcal'],
+    answer: 0,
+    explanation: 'Mỗi bậc chỉ nhận khoảng 10% năng lượng của bậc trước: sinh vật sản xuất 10 000 → tiêu thụ bậc 1 khoảng 1 000 → tiêu thụ bậc 2 khoảng 100 kcal/m²/năm.'
+  },
   params: [
     { key: 'focus', label: 'Sinh vật đang xét', type: 'select', value: 'mouse', options: WEB.nodes.map((n) => [n.id, `${n.icon} ${n.name}`]) },
     { key: 'remove', label: 'Loại bỏ loài này khỏi lưới', type: 'toggle', value: false },

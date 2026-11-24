@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Kéo nến vào trong tiêu cự (d < f): ảnh ảo cùng chiều, lớn, nằm cùng phía với vật.', 'Đặt d = 2f: ảnh thật bằng vật tại 2f.', 'Tăng chiết suất n: tiêu cự giảm.'],
   exam: ['Tính d′, k từ d và f; vẽ ảnh bằng tia đặc biệt; xác định tính chất ảnh.'],
+  quiz: {
+    question: 'Thấu kính hội tụ có tiêu cự 15 cm, ngọn nến đặt cách thấu kính 30 cm (d = 2f). Ảnh của ngọn nến có đặc điểm gì?',
+    options: ['Ảnh ảo, cùng chiều, lớn hơn vật', 'Ảnh thật, ngược chiều, nhỏ hơn vật', 'Không tạo được ảnh', 'Ảnh thật, ngược chiều, cao bằng vật'],
+    answer: 3,
+    explanation: 'Từ 1/f = 1/d + 1/d′ với d = 30 cm, f = 15 cm được d′ = 30 cm, k = −d′/d = −1: ảnh thật, ngược chiều, cao bằng vật, nằm ở 2f phía bên kia thấu kính.'
+  },
   params: [
     { key: 'd', label: 'Khoảng cách vật d', min: 5, max: 60, step: 1, value: 30, unit: 'cm' },
     { key: 'n', label: 'Chiết suất n', min: 1.3, max: 1.9, step: 0.05, value: 1.5, decimals: 2 },

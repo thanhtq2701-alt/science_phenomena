@@ -24,6 +24,12 @@ export default {
   ],
   observe: ['Với 100 hạt, đường thực tế răng cưa và lệch nhiều so với lí thuyết; với 2000 hạt thì gần khớp – quy luật thống kê.', 'Đổi đồng vị: hình dạng đường cong giống hệt nhau khi đo thời gian theo T.'],
   exam: ['Tính N, m, H còn lại sau t; tính tuổi mẫu vật; tính số hạt nhân con tạo thành.', 'Bài toán tỉ lệ hạt nhân mẹ/con.'],
+  quiz: {
+    question: 'Mẫu có 400 hạt nhân I-131 (chu kì bán rã khoảng 8 ngày). Sau 16 ngày còn lại khoảng bao nhiêu hạt nhân chưa phân rã?',
+    options: ['0, vì đã phân rã hết', 'Khoảng 100', 'Khoảng 200', 'Khoảng 300'],
+    answer: 1,
+    explanation: '16 ngày = 2 chu kì bán rã. Sau mỗi chu kì số hạt nhân còn lại giảm một nửa: 400 → 200 → 100. Vì phân rã là ngẫu nhiên nên số thực tế dao động quanh 100.'
+  },
   params: [
     { key: 'iso', label: 'Đồng vị', type: 'select', value: 'I-131', options: Object.keys(ISO).map((k) => [k, `${k} (T = ${ISO[k].T} ${ISO[k].unit})`]) },
     { key: 'N0', label: 'Số hạt nhân ban đầu', min: 100, max: 2000, step: 100, value: 400 },

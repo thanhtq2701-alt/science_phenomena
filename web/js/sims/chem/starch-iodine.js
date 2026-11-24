@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Kéo nhiệt độ lên trên 70 °C rồi hạ xuống để xem màu mất đi và trở lại.', 'Giảm lượng iodine: màu nhạt dần nhưng vẫn là xanh tím.'],
   exam: ['Nhận biết tinh bột bằng dung dịch I2; giải thích hiện tượng khi đun nóng.'],
+  quiz: {
+    question: 'Hồ tinh bột đã có màu xanh tím với iodine. Đun nóng lên khoảng 90 °C rồi để nguội. Màu thay đổi thế nào?',
+    options: ['Mất màu khi nóng, có màu lại khi nguội', 'Giữ nguyên màu xanh tím', 'Mất màu hẳn, để nguội cũng không trở lại', 'Chuyển sang màu đỏ gạch'],
+    answer: 0,
+    explanation: 'Màu xanh tím do I2 nằm trong lòng xoắn amylose. Đun nóng làm xoắn duỗi ra, I2 thoát ra nên mất màu; để nguội xoắn hình thành lại nên có màu trở lại.'
+  },
   params: [
     { key: 'temp', label: 'Nhiệt độ', min: 20, max: 100, step: 5, value: 25, unit: '°C' },
     { key: 'iodine', label: 'Lượng I2 nhỏ vào', min: 0, max: 10, step: 1, value: 5, unit: 'giọt' }

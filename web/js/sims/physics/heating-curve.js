@@ -18,6 +18,12 @@ export default {
   ],
   observe: ['Tăng công suất bếp: mọi giai đoạn nhanh hơn nhưng hình dạng đồ thị không đổi.', 'Tăng khối lượng: thời gian mỗi giai đoạn tăng tỉ lệ.'],
   exam: ['Tính tổng nhiệt lượng để đưa m kg nước đá ở −t1 thành hơi ở 100 °C.', 'Đọc đồ thị T–t: xác định các giai đoạn, suy ra λ, L, c khi biết công suất.'],
+  quiz: {
+    question: 'Đun đều một khối nước đá từ −20 °C. Trong lúc nước đá đang tan, nhiệt độ của hỗn hợp thay đổi thế nào?',
+    options: ['Giữ nguyên 0 °C cho tới khi tan hết', 'Tăng đều như lúc trước', 'Giảm xuống dưới 0 °C', 'Tăng nhanh hơn lúc trước'],
+    answer: 0,
+    explanation: 'Khi nóng chảy, nhiệt lượng cấp vào dùng để phá vỡ liên kết giữa các phân tử (Q = m·λ), không làm tăng động năng phân tử, nên nhiệt độ đứng yên ở 0 °C.'
+  },
   params: [
     { key: 'power', label: 'Công suất bếp', min: 200, max: 3000, step: 100, value: 1000, unit: 'W' },
     { key: 'mass', label: 'Khối lượng nước đá', min: 0.1, max: 1, step: 0.1, value: 0.2, unit: 'kg', decimals: 1 },

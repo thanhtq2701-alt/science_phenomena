@@ -34,6 +34,12 @@ export default {
   ],
   observe: ['Xem tRNA bay tới với anticodon khớp codon đang ở vị trí A.', 'Đếm số amino acid ở cuối so với số codon.', 'Bấm "mRNA mới" để sinh trình tự ngẫu nhiên khác.'],
   exam: ['Xác định chuỗi amino acid từ mRNA/ gene dùng bảng mã di truyền.', 'Tính số tRNA, số liên kết peptide, số lượt ribosome.'],
+  quiz: {
+    question: 'Một mRNA có 8 codon, gồm codon mở đầu AUG và một codon kết thúc. Khi ribosome gặp codon kết thúc, chuỗi vừa tổng hợp có bao nhiêu amino acid (tính cả Met mở đầu)?',
+    options: ['8', '7', '6', '24'],
+    answer: 1,
+    explanation: 'Codon kết thúc (UAA, UAG, UGA) không có tRNA tương ứng nên không mã hóa amino acid: 8 − 1 = 7. Sau đó Met mở đầu bị cắt bỏ nên protein hoàn chỉnh còn 6 amino acid.'
+  },
   params: [
     { key: 'n', label: 'Số codon trên mRNA', min: 5, max: 14, step: 1, value: 8 },
     { key: 'speed', label: 'Tốc độ ribosome', min: 0.3, max: 3, step: 0.1, value: 1, decimals: 1 }

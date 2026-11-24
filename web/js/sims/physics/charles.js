@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['Chọn đẳng áp, kéo nhiệt độ: pit-tông lên xuống, điểm chạy trên đường thẳng qua −273 °C.', 'Chọn đẳng tích: áp kế tăng, thể tích giữ nguyên.'],
   exam: ['Bài toán V1/T1 = V2/T2, p1/T1 = p2/T2 (chú ý đổi sang Kelvin).', 'Vẽ và nhận dạng đồ thị các đẳng quá trình trong hệ trục khác nhau.'],
+  quiz: {
+    question: 'Khí trong xi-lanh có pit-tông tự do (áp suất không đổi) đang ở 27 °C. Nung nóng lên 327 °C thì thể tích khí thay đổi thế nào?',
+    options: ['Tăng khoảng 12 lần (327 : 27)', 'Tăng gấp đôi', 'Không đổi', 'Giảm một nửa'],
+    answer: 1,
+    explanation: 'Ở áp suất không đổi, V tỉ lệ thuận với nhiệt độ tuyệt đối T (K), không phải với °C: 27 °C = 300 K, 327 °C = 600 K, nên thể tích tăng gấp đôi.'
+  },
   params: [
     { key: 'mode', label: 'Quá trình', type: 'select', value: 'isobaric', options: [['isobaric', 'Đẳng áp (pit-tông tự do)'], ['isochoric', 'Đẳng tích (bình kín)']] },
     { key: 't', label: 'Nhiệt độ', min: -100, max: 400, step: 5, value: 27, unit: '°C' }

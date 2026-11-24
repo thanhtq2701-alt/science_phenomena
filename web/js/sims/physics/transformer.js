@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['N2 > N1: đèn tải sáng hơn, dòng thứ cấp nhỏ hơn sơ cấp.', 'Chuyển nguồn sang một chiều: không có điện áp ra.', 'Tăng điện áp truyền tải từ 22 kV lên 220 kV: hao phí giảm 100 lần.'],
   exam: ['Tính U2, I2, N2 của máy biến áp; xác định máy tăng hay hạ áp.', 'Tính hao phí, hiệu suất truyền tải; điện áp cần thiết để giảm hao phí.'],
+  quiz: {
+    question: 'Máy biến áp lí tưởng có N1 = 200 vòng, N2 = 400 vòng, cuộn sơ cấp nối nguồn xoay chiều 12 V. Điện áp ở cuộn thứ cấp bằng bao nhiêu?',
+    options: ['6 V', '12 V', '24 V', '48 V'],
+    answer: 2,
+    explanation: 'Với máy biến áp lí tưởng U2/U1 = N2/N1 = 400/200 = 2, nên U2 = 24 V. Đây là máy tăng áp; dòng điện ở cuộn thứ cấp giảm còn một nửa.'
+  },
   params: [
     { key: 'N1', label: 'Số vòng sơ cấp N1', min: 50, max: 1000, step: 50, value: 200 },
     { key: 'N2', label: 'Số vòng thứ cấp N2', min: 50, max: 2000, step: 50, value: 400 },

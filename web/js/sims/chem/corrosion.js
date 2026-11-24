@@ -16,6 +16,12 @@ export default {
   ],
   observe: ['So sánh ba trường hợp: Fe đơn độc, Fe–Cu, Fe–Zn trong cùng điều kiện.', 'Giảm nồng độ muối về 0 (nước cất): tốc độ ăn mòn giảm mạnh.', 'Tắt O2 (dung dịch đã đuổi khí): ăn mòn gần như dừng.'],
   exam: ['Xác định điện cực nào bị ăn mòn trong cặp kim loại; điều kiện ăn mòn điện hóa.', 'Giải thích vì sao gắn Zn lên vỏ tàu bảo vệ được thép.'],
+  quiz: {
+    question: 'Thanh sắt tiếp xúc với đồng, cùng nhúng trong nước muối có O2 hòa tan. So với thanh sắt đứng riêng, sắt bị gỉ thế nào?',
+    options: ['Chậm hơn vì đồng che chắn cho sắt', 'Nhanh hơn vì tạo pin điện hóa, sắt là cực âm bị oxi hóa', 'Như nhau', 'Sắt không gỉ, đồng bị ăn mòn thay'],
+    answer: 1,
+    explanation: 'Fe và Cu tiếp xúc trong dung dịch điện li tạo pin điện hóa: Fe mạnh hơn làm anode (cực âm) bị oxi hóa, O2 nhận electron ở Cu. Ăn mòn điện hóa nhanh hơn nhiều so với sắt đứng riêng.'
+  },
   params: [
     { key: 'pair', label: 'Vật liệu', type: 'select', value: 'fecu', options: [['fe', 'Chỉ Fe'], ['fecu', 'Fe tiếp xúc Cu'], ['fezn', 'Fe tiếp xúc Zn (anode hi sinh)']] },
     { key: 'salt', label: 'Nồng độ NaCl', min: 0, max: 5, step: 0.5, value: 3, unit: '%', decimals: 1 },

@@ -20,6 +20,12 @@ export default {
   ],
   observe: ['Quan sát hai mạch DNA tách ra cục bộ ("bong bóng phiên mã") và đóng lại sau khi enzyme đi qua.', 'So sánh mRNA với mạch mã hóa: giống hệt trừ T → U.'],
   exam: ['Xác định trình tự mRNA từ mạch khuôn hoặc mạch mã hóa.', 'Tính số ribonucleotide mỗi loại; số lần phiên mã từ lượng mRNA.'],
+  quiz: {
+    question: 'Mạch khuôn của gene có bộ ba 3′–TAC–5′. Bộ ba tương ứng (codon) trên mRNA là gì?',
+    options: ['5′–ATG–3′', '5′–UAC–3′', '5′–AUG–3′', '5′–TAC–3′'],
+    answer: 2,
+    explanation: 'RNA polymerase lắp ribonucleotide theo nguyên tắc bổ sung T–A, A–U, C–G, G–C. RNA không có T mà dùng U, nên TAC trên mạch khuôn cho AUG trên mRNA (codon mở đầu).'
+  },
   params: [
     { key: 'len', label: 'Chiều dài gene (nucleotide)', min: 12, max: 30, step: 3, value: 18 },
     { key: 'speed', label: 'Tốc độ RNA polymerase', min: 0.5, max: 4, step: 0.5, value: 1.5, decimals: 1 }

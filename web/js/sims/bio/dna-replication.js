@@ -20,6 +20,12 @@ export default {
   ],
   observe: ['Tăng tốc độ polymerase để thấy chạc tái bản di chuyển nhanh hơn.', 'Mạch dưới tổng hợp theo từng đoạn ngắn ngược chiều chạc (đoạn Okazaki).', 'Bấm "Nhân đôi lần nữa" để đếm số phân tử sau k lần.'],
   exam: ['Tính số nucleotide mỗi loại môi trường cung cấp sau k lần nhân đôi.', 'Số phân tử DNA chứa toàn N¹⁴ / N¹⁵ trong thí nghiệm Meselson – Stahl.'],
+  quiz: {
+    question: 'Sau một lần nhân đôi, mỗi phân tử DNA con gồm những mạch nào?',
+    options: ['Cả hai mạch đều mới', 'Một mạch cũ của DNA mẹ và một mạch mới', 'Một phân tử giữ cả hai mạch cũ, phân tử kia gồm hai mạch mới', 'Mỗi mạch gồm các đoạn cũ và mới xen kẽ'],
+    answer: 1,
+    explanation: 'Nhân đôi DNA theo nguyên tắc bán bảo toàn: hai mạch mẹ tách ra, mỗi mạch làm khuôn tổng hợp một mạch mới theo nguyên tắc bổ sung (A–T, G–C).'
+  },
   params: [
     { key: 'len', label: 'Số cặp nucleotide', min: 12, max: 30, step: 2, value: 20 },
     { key: 'speed', label: 'Tốc độ DNA polymerase', min: 0.5, max: 4, step: 0.5, value: 1.5, decimals: 1 }
