@@ -174,11 +174,16 @@ function renderSim(id, query = new URLSearchParams()) {
   const params = applyQuery(sim, defaultParams(sim), query);
   const canvas = el('canvas', { class: 'stage' });
   const metricsBox = el('div', { class: 'metrics' });
-  const metricsPanel = el('div', {}, el('h3', {}, 'Số liệu'), metricsBox);
-  const revealMetrics = () => { metricsPanel.hidden = false; };
+  const metricsPanel = el('div', { class: 'panel-group' }, el('h3', {}, 'Số liệu'), metricsBox);
+  const controls = buildControls(sim, params, (k, v) => state.runner && state.runner.setParam(k, v));
+  // Quiz: che canvas, khóa điều khiển và ẩn số liệu cho tới khi học sinh trả lời
+  const quizLock = sim.quiz ? el('div', { class: 'quiz-lock' }, '🔒 Trả lời câu "Dự đoán trước" để mở mô phỏng') : null;
+  const setLocked = (locked) => {
+    for (const input of document.querySelectorAll('.panel .controls :is(input, select, button), .panel .actions :is(select, button)')) input.disabled = locked;
+  };
+  const revealMetrics = () => { metricsPanel.hidden = false; quizLock.remove(); setLocked(false); };
   const prediction = sim.quiz ? buildQuiz(sim.quiz, revealMetrics) : null;
   metricsPanel.hidden = !!prediction;
-  const controls = buildControls(sim, params, (k, v) => state.runner && state.runner.setParam(k, v));
 
   const panel = el('aside', { class: 'panel' },
     el('h3', {}, 'Điều khiển'),
@@ -210,7 +215,7 @@ function renderSim(id, query = new URLSearchParams()) {
     el('div', { class: 'crumbs' }, el('a', { href: '#/' }, 'Trang chủ'), ' › ', el('a', { href: '#/' + sub.id }, sub.name), ' › ', el('a', { href: `#/${sub.id}/${sim.chapter}` }, ch ? ch.title : sim.chapter)),
     el('h1', { style: `--c:${sub.color}` }, sim.title),
     el('p', { class: 'lead' }, sim.summary || ''),
-    el('div', { class: 'sim-layout' }, el('div', { class: 'stage-wrap', style: `--c:${sub.color}` }, canvas), panel),
+    el('div', { class: 'sim-layout' }, el('div', { class: 'stage-wrap', style: `--c:${sub.color}` }, canvas, quizLock), panel),
     theory,
     ...(feedback ? [feedback] : []),
     el('nav', { class: 'pager' },
@@ -236,6 +241,7 @@ function renderSim(id, query = new URLSearchParams()) {
   } }, '🔗 Sao chép link');
   actions.append(shareButton);
   document.getElementById('actions').replaceWith(actions);
+  if (prediction) setLocked(true);
   let acc = 0;
   runner.onFrame((r) => {
     acc++;
@@ -253,6 +259,8 @@ function buildQuiz(quiz, onAnswer) {
       onclick: () => {
         const correct = index === quiz.answer;
         for (const button of choices.children) button.disabled = true;
+        choices.children[quiz.answer].classList.add('quiz-correct');
+        if (!correct) choices.children[index].classList.add('quiz-wrong');
         feedback.textContent = correct
           ? `Chính xác. ${quiz.explanation}`
           : `Chưa chính xác. Đáp án đúng: ${quiz.options[quiz.answer]}. ${quiz.explanation}`;

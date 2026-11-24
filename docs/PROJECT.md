@@ -79,11 +79,12 @@ Bảng sinh tự động từ data/catalog.json (chạy `npm run catalog`).
 
 - Đang chạy: **https://science-phenomenons.onrender.com** (Render Static Site, cấu hình trong `render.yaml`, build `npm run build` → `dist/`). Mỗi lần push lên `main`, Render tự build lại.
 - Bản tĩnh không có server nên form góp ý tự ẩn. Muốn có góp ý: chuyển sang Web Service (xem README), thêm Upstash nếu cần lưu lâu dài.
-- Link có thể đặt sẵn tham số: `#/sim/<id>?<key>=<giá trị>`, ví dụ `#/sim/physics-kinetic-model?temp=610`.
+- Link có thể đặt sẵn tham số: `#/sim/<id>?<key>=<giá trị>`, ví dụ `#/sim/physics-kinetic-model?temp=610`. Nút "🔗 Sao chép link" trên trang mô phỏng tạo link chứa các tham số đang khác mặc định.
+- Chế độ "Dự đoán trước": khai báo `quiz: { question, options, answer, explanation }` trong file sim. Canvas bị che, điều khiển bị khóa và số liệu bị ẩn cho tới khi học sinh trả lời. Hiện có ở `physics-boyle`.
 - Đã kiểm tra trên máy tính (Chrome) và điện thoại.
 
 ## Việc có thể làm tiếp
 
 - Mở rộng sang lớp 10–11: cân bằng hóa học, khúc xạ – giao thoa ánh sáng, quang hợp – hô hấp.
-- Chế độ "bài tập": ẩn số liệu, yêu cầu học sinh dự đoán trước khi bấm chạy.
+- Thêm `quiz` "Dự đoán trước" cho các mô phỏng chủ chốt mỗi môn, kèm test kiểm tra cấu trúc `quiz`.
 - Thêm ảnh/GIF minh họa vào README cho mỗi môn.
